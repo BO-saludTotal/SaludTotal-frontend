@@ -120,3 +120,28 @@ textarea {
 .btn:hover {
     background-color: #333;
 }
+
+.back-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: none;
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.back-btn i {
+    font-size: 18px;
+}
+
+:host {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 160vh;
+}
