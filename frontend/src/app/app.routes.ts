@@ -7,6 +7,7 @@ import { RegistroComponent } from './paginas/registro/registro.component';
 import { DashboardPacienteComponent } from './paginas/dashboard-paciente/dashboard-paciente.component';
 import { DashboardAdministradorComponent } from './paginas/dashboard-administrador/dashboard-administrador.component';
 import { DashboardDoctorComponent } from './paginas/dashboard-doctor/dashboard-doctor.component';
+import { PaginaNoEncontradaComponent } from './paginas/pagina-no-encontrada/pagina-no-encontrada.component';
 
 export const routes: Routes = [
     {path: 'home', component: HomeComponent},
@@ -17,5 +18,6 @@ export const routes: Routes = [
     {path: 'dashboard-paciente', component: DashboardPacienteComponent},
     {path: 'dashboard-administrador', component: DashboardAdministradorComponent},
     {path: 'dashboard-doctor', component: DashboardDoctorComponent},
-    {path: '', redirectTo: '/home', pathMatch: 'full'}
+    {path: '', redirectTo: '/home', pathMatch: 'full'},
+    {path: '**', component: PaginaNoEncontradaComponent},
 ];
