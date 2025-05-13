@@ -1,0 +1,188 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9f9f9;
+    color: #1f1f1f;
+  }
+  
+  header {
+    background: #fff;
+    padding: 20px 40px;
+    border-bottom: 1px solid #e5e5e5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .user-info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  
+  .user-info .details {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .user-info .details strong {
+    font-size: 16px;
+  }
+  
+  .user-info .details span {
+    font-size: 13px;
+    color: gray;
+  }
+  
+  .last-access {
+    font-size: 12px;
+    color: #888;
+  }
+  
+  .logout-btn {
+    background-color: #1c1c1c;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  main {
+    padding: 30px 40px 60px 40px;
+    display: grid;
+    gap: 32px;
+  }
+  
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+  }
+  
+  .dashboard-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    border: 1.5px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 14px;
+    gap: 12px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    height: 100px;
+  }
+  
+  .dashboard-btn i {
+    font-size: 24px;
+    color: #1f1f1f;
+  }
+  
+  .dashboard-btn:hover {
+    border-color: #3b82f6;
+    background-color: #f0f9ff;
+  }
+  
+  .section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+  }
+  
+  .card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
+  }
+  
+  .section-title {
+    font-weight: 600;
+    margin-bottom: 12px;
+    font-size: 15px;
+  }
+  
+  .btns-status {
+    margin-bottom: 12px;
+  }
+  
+  .btn-status {
+    font-size: 12px;
+    padding: 6px 12px;
+    border-radius: 6px;
+    background-color: #f3f4f6;
+    color: #1f1f1f;
+    border: none;
+    margin-right: 8px;
+    cursor: pointer;
+  }
+  
+  .btn-status:hover {
+    background-color: #e5e7eb;
+  }
+  
+  .cita {
+    display: flex;
+    justify-content: space-between;
+    background-color: #f9f9f9;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+  
+  .alert {
+    background-color: #fef3c7;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-left: 4px solid #facc15;
+    border-radius: 6px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .link-pdf {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+  
+  .card p small {
+    color: #888;
+    font-size: 12px;
+  }
+
+  .badge {
+    display: inline-block;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 6px;
+    margin-left: 8px;
+    font-weight: 500;
+  }
+  
+  .confirmado {
+    background-color: #d1fae5;
+    color: #065f46;
+  }
+  
+  .cancelado {
+    background-color: #fee2e2;
+    color: #991b1b;
+  }
+  
