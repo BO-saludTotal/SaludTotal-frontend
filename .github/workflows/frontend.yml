@@ -1,4 +1,5 @@
 name: Frontend CI/CD
+
 on: 
   push:
     branches:
@@ -8,23 +9,24 @@ on:
     branches:
       - develop
       - main
+
 jobs:
-  buld-and-deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout codigo
+      - name: Checkout código
         uses: actions/checkout@v3
 
-      - name: Setup.js
+      - name: Configurar Node.js
         uses: actions/setup-node@v4
         with:
-          node-version : 20
+          node-version: 20
 
       - name: Instalar dependencias
         run: npm install
 
-      - name: build Angular
+      - name: Compilar Angular
         run: npm run build
 
       - name: Desplegar a Azure (solo en main)
@@ -32,5 +34,5 @@ jobs:
         uses: azure/webapps-deploy@v2
         with:
           app-name: app-service-frontend
-          publish-profile: ${{ secrets.AZURE_WEBAPP_PROFILE_FRONTEND}}
-          package: dist/
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PROFILE_FRONTEND }}
+          package: dist/salud-total-frontend
