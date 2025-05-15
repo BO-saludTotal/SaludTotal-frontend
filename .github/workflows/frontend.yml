@@ -33,8 +33,8 @@ jobs:
         working-directory: ./frontend
         run: npm run build
       
-      - name: Desplegar a Azure (solo en main)
-        if: github.ref == 'refs/heads/main'
+      - name: enviar al main
+        if: github.event_name == 'push' && github.ref=='refs/heads/main'
         uses: azure/webapps-deploy@v2
         with:
           app-name: app-service-frontend
