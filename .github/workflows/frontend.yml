@@ -25,6 +25,9 @@ jobs:
       - name: Instalar dependencias
         run: npm install
 
+      - name: instalar angular
+        run: npm install -g @angular/cli
+
       - name: Compilar Angular
         run: npm run build
       
