@@ -18,17 +18,17 @@ jobs:
       - name: Checkout código
         uses: actions/checkout@v3
 
-      - name: Configurar Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-
       - name: Instalar dependencias
         run: npm install
 
       - name: Compilar Angular
         run: npm run build
 
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          
       - name: Desplegar a Azure (solo en main)
         if: github.ref == 'refs/heads/main'
         uses: azure/webapps-deploy@v2
