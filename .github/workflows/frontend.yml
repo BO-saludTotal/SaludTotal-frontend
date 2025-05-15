@@ -23,12 +23,14 @@ jobs:
           node-version: 20
 
       - name: Instalar dependencias
+        working-directory: ./frontend
         run: npm install
 
       - name: instalar angular
         run: npm install -g @angular/cli
 
       - name: Compilar Angular
+        working-directory: ./frontend
         run: npm run build
       
       - name: Desplegar a Azure (solo en main)
