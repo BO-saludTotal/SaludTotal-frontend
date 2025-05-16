@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+
     box-sizing: border-box;
     font-family: 'Segoe UI', sans-serif;
   }
@@ -11,69 +12,94 @@
   }
   
   .header {
-    background-color: #fff;
-    padding: 15px 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
+    background-color: #fff;
+    padding: 1% 2%;
     border-bottom: 1px solid #ddd;
   }
   
   .logo {
-    font-size: 18px;
     display: flex;
     align-items: center;
-    gap: 10px;
     font-weight: bold;
+    
+    font-size: 1.125rem; // 18px
   }
   
   .header-right {
     display: flex;
+    flex-basis: 15%;
+    
+    justify-content: space-between;
     align-items: center;
-    gap: 20px;
-    font-size: 13px;
+    
+    font-size: 0.8125rem; // 13px
+  }
+  @media screen and (max-width: 480px){
+    .header-right {
+      flex-basis: 35%;
+    }
   }
   
   .logout-btn {
-    background-color: #e0e0e0;
-    border: none;
-    padding: 8px 12px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 13px;
     display: flex;
     align-items: center;
-    gap: 5px;
+    justify-content: center;
+
+    background-color: #e0e0e0;
+    border: none;
+
+    cursor: pointer;
+    font-size: 0.8125rem; // 13px
+
+    border-radius: 5px;
+    padding: 3.5% 5.5%;
+    gap: 10%;
   }
   
   .container {
-    padding: 30px;
-    max-width: 900px;
-    margin: auto;
+    padding: 2%;
+    max-width: 100vw;
+
+    background-color: #f9f9f9;
   }
   
   .welcome {
-    background-color: #fff;
-    padding: 30px;
     display: flex;
     align-items: center;
     border-radius: 10px;
-    margin-bottom: 25px;
-    gap: 20px;
+
+    padding: 2%;
+    margin-bottom: 1.7%;
+    gap: 1.5%;
+
+    background-color: #fff;
   }
   
   .profile-img {
     width: 80px;
     height: 80px;
+
     background-color: #ddd;
     border-radius: 50%;
   }
   
   .actions {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
-    margin-bottom: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 2%;
+  }
+
+  @media screen and (max-width: 480px){
+    .actions {
+      flex-direction: column;
+    }
   }
 
   .actions :hover{
@@ -82,75 +108,107 @@
   }
   
   .actions button {
-    padding: 20px;
+    flex-basis: 24%;
+
+    padding: 1.5%;
     border: none;
-    background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     cursor: pointer;
-    font-size: 14px;
+    font-size: 0.875rem; // 14px
     text-align: center;
+  
+    background-color: #fff;
+  }
+
+  @media screen and (max-width: 480px){
+    .actions button {
+      width: 100%;
+      margin-top: 2%;
+      margin-bottom: 2%;
+    }
   }
   
   .actions button i {
-    font-size: 20px;
+    font-size: 1.25rem; // 20px
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: 2.5%;
   }
   
   .appointment, .account {
     background-color: #fff;
-    padding: 20px;
+
+    padding: 1.5%;
+
     border-radius: 10px;
-    margin-bottom: 25px;
+    margin-bottom: 2%;
   }
-  
+
   .appointment h3, .account h3 {
-    margin-bottom: 15px;
+    margin-bottom: 1%;
   }
   
   .appointment p {
-    margin: 5px 0;
-    font-size: 14px;
+    margin: 0.5% 0;
+    font-size: 0.875rem; // 14px
   }
-  
+
   .account-options {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  @media screen and (max-width: 480px){
+    .account-options {
+      flex-direction: column;
+    }
   }
   
   .account-options button {
-    padding: 15px;
+    flex-basis: 32%;
+  
+    padding: 1%;
     border: none;
     background-color: #f9f9f9;
+    
     border-radius: 8px;
-    font-size: 14px;
+    font-size: 0.875rem; // 14px
     cursor: pointer;
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 2%;
   }
   
+  @media screen and (max-width: 480px){
+    .account-options button {
+      width: 100%;
+      margin-top: 2%;
+      margin-bottom: 2%;
+    }
+  }
+
   .emergency {
     background-color: #222;
     color: white;
-    padding: 20px;
+    padding: 1.5%;
     border-radius: 10px;
     display: flex;
     align-items: center;
-    gap: 15px;
-    margin-bottom: 30px;
+    gap: 1%;
+    margin-bottom: 1.5%;
   }
   
   .emergency i {
-    font-size: 30px;
+    font-size: 1.875rem; // 30px
   }
   
   footer {
     text-align: center;
-    padding: 20px 0;
-    font-size: 13px;
+    padding: 1.5% 0;
+    font-size: 0.8125rem; // 13px
     color: #999;
   }
   
