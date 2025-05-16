@@ -4,10 +4,8 @@ on:
   push:
     branches:
       - develop
-      - main
   pull_request:
     branches:
-      - develop
       - main
 
 jobs:
@@ -18,19 +16,25 @@ jobs:
       - name: Checkout código
         uses: actions/checkout@v3
 
-      - name: Instalar dependencias
-        run: npm install
-
-      - name: Compilar Angular
-        run: npm run build
 
       - name: Configurar Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          
-      - name: Desplegar a Azure (solo en main)
-        if: github.ref == 'refs/heads/main'
+
+      - name: Instalar dependencias
+        working-directory: ./frontend
+        run: npm install
+
+      - name: instalar angular
+        run: npm install -g @angular/cli
+
+      - name: Compilar Angular
+        working-directory: ./frontend
+        run: npm run build
+      
+      - name: enviar al main
+        if: github.event_name == 'push' && github.ref=='refs/heads/main'
         uses: azure/webapps-deploy@v2
         with:
           app-name: app-service-frontend
