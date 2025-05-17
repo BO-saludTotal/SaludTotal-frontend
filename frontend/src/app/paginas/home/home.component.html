@@ -19,6 +19,17 @@
       </div>
     </div>
   </nav>
+  <nav class="nav-mini">
+    <a href="#">Citas</a>
+    <div class="dropdown">
+      <button class="dropbtn">Iniciar sesión</button>
+      <div class="dropdown-content">
+        <a [routerLink]="['/login-paciente']">Paciente</a>
+        <a [routerLink]="['/login-doctor']">Doctor</a>
+        <a [routerLink]="['/login-administrador']">Administrador</a>
+      </div>
+    </div>
+  </nav>
 </header>
 
 <section class="hero">
