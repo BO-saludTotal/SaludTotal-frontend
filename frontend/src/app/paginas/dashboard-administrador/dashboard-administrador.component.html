@@ -1,0 +1,63 @@
+<!-- recepcionista-dashboard.component.html -->
+<header>
+  <div class="user-info">
+    <div class="photo"></div>
+    <div class="details">
+      <strong>Bienvenida, María González</strong>
+      <span>Recepcionista Administrativa</span>
+    </div>
+  </div>
+  <div class="header-right">
+    <div class="last-access">Última vez: 2025-05-05 13:20</div>
+  <button class="logout-btn"><i class='bx bx-exit'></i> Salir</button>
+  </div>
+</header>
+
+<main>
+  <div class="card-grid">
+    <div class="dashboard-btn"><i class='bx bx-calendar-plus'></i> Registrar Nueva Cita</div>
+    <div class="dashboard-btn"><i class='bx bx-calendar'></i> Agenda Médica</div>
+    <div class="dashboard-btn"><i class='bx bx-user-plus'></i> Nuevo Paciente</div>
+    <div class="dashboard-btn"><i class='bx bx-user'></i> Actualizar Paciente</div>
+    <div class="dashboard-btn" (click)="triggerUpload()"><i class='bx bx-upload'></i> Subir Documentos</div>
+    <input type="file" id="fileInput" #fileInput style="display: none" (change)="onFileSelected($event)">
+  </div>
+
+  <div class="section">
+    <div class="card">
+      <div class="section-title">Citas de Hoy</div>
+      <div class="cita">
+        <span class="hora">09:00 - Dr. Rodríguez</span>
+        <span class="paciente">Juan Pérez <span class="badge confirmado">Confirmado</span></span>
+      </div>
+      <div class="cita">
+        <span class="hora">10:30 - Dra. Martínez</span>
+        <span class="paciente">Ana García <span class="badge cancelado">Cancelado</span></span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="section-title">Notificaciones</div>
+      <div class="alert"><i class='bx bxs-error'></i> Pago pendiente – Paciente: Carlos Ruiz</div>
+      <div class="alert"><i class='bx bx-file'></i> Documentos faltantes – Paciente: Laura Sánchez</div>
+    </div>
+
+    <div class="card">
+      <div class="section-title">Actividad Reciente</div>
+      <p><i class='bx bx-user-plus'></i> Nuevo Paciente Registrado<br><small>María Torres – 05/05/2025</small></p>
+      <p><i class='bx bx-edit'></i> Información Actualizada<br><small>Pedro Gómez – 05/05/2025</small></p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="card-support">
+      <div class="section-title">Manual de Procedimientos</div>
+      <div class="link-pdf"><i class='bx bx-book'></i> Accede a guías administrativas</div>
+    </div>
+
+    <div class="card-support">
+      <div class="section-title">Soporte Técnico</div>
+      <p class="link-soporte"><i class='bx bx-headphone'></i> Contacta al equipo de soporte</p>
+    </div>
+  </div>
+</main>

@@ -1,12 +1,12 @@
 name: Frontend CI/CD
 
-on:
+on: 
   push:
     branches:
       - develop
   pull_request:
     branches:
-      - develop
+      - main
 
 jobs:
   build-and-deploy:
@@ -22,14 +22,20 @@ jobs:
           node-version: 20
 
       - name: Instalar dependencias
+        working-directory: ./frontend
         run: npm install
 
-      - name: Build Angular
-        run: npm run build
+      - name: instalar angular
+        run: npm install -g @angular/cli
 
-      - name: Desplegar a Azure
+      - name: Compilar Angular
+        working-directory: ./frontend
+        run: npm run build
+      
+      - name: enviar al main
+        if: github.event_name == 'push' && github.ref=='refs/heads/main'
         uses: azure/webapps-deploy@v2
         with:
-          app-name: app-service-frontend  # <-- reemplazá con el nombre real de tu App Service
+          app-name: app-service-frontend
           publish-profile: ${{ secrets.AZURE_WEBAPP_PROFILE_FRONTEND }}
-          package: dist/
+          package: dist/salud-total-frontend
