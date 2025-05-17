@@ -1,47 +1,74 @@
 * {
     margin: 0;
     padding: 0;
+    
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
   
-  body {
-    font-family: 'Poppins' sans-serif;
-    background-color: #f9f9f9;
-    color: #1f1f1f;
-  }
-  
   header {
-    background: #fff;
-    padding: 20px 40px;
-    border-bottom: 1px solid #e5e5e5;
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
+
+    background-color: #fff; 
+    color: #1f1f1f;
+
+    padding: 1% 2.5%;
+    border-bottom: 1px solid #e5e5e5;
+
+    max-width: 100vw;
   }
   
+  @media screen and (max-width: 480px){
+    header {
+      flex-direction: column;
+      height: 17vh;
+    }
+  }
+
   .user-info {
     display: flex;
-    align-items: center;
-    gap: 16px;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-basis: 20.5%;
   }
   
+  .photo {
+    width: 50px;
+    height: 50px;
+
+    background-color: #ddd;
+    border-radius: 50%;
+  }
+
   .user-info .details {
     display: flex;
     flex-direction: column;
   }
   
   .user-info .details strong {
-    font-size: 16px;
+    font-size: 1rem; // 16px
   }
   
   .user-info .details span {
-    font-size: 13px;
+    font-size: 0.8125rem; // 13px
     color: gray;
   }
-  
+
+  .header-right {
+    display: flex;
+    flex-basis: 19%;
+    
+    justify-content: space-between;
+    align-items: center;
+    
+    font-size: 0.8125rem; // 13px
+  }
+
   .last-access {
-    font-size: 12px;
+    font-size: 0.75rem; //12 px
     color: #888;
   }
   
@@ -49,43 +76,84 @@
     background-color: #1c1c1c;
     color: white;
     border: none;
-    padding: 8px 16px;
-    border-radius: 6px;
+    
+    border-radius: 5px;
+    padding: 3.5% 5.5%;
     cursor: pointer;
   }
   
+  @media screen and (max-width: 480px){
+    .user-info {
+      align-self: flex-start;
+    }
+    .photo{
+      margin-right: 5%;
+    }
+    .header-right{
+      width: 82%;
+      align-self: flex-end;
+    }
+  }
+
   main {
-    padding: 30px 40px 60px 40px;
-    display: grid;
-    gap: 32px;
+    padding: 2%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 9%;
+    background-color: #f9f9f9;
+    color: #1f1f1f;
+
+    max-width: 100vw;
   }
   
   .card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 3%;
+  }
+
+  @media screen and (max-width: 480px){
+    .card-grid {
+      flex-direction: column;
+      margin-top: 5%;
+      margin-bottom: 5%;
+    }
   }
   
   .dashboard-btn {
+    flex-basis: 19%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
     background-color: #ffffff;
     border: 1.5px solid #e5e7eb;
     border-radius: 12px;
-    padding: 20px;
+
+    padding: 3%;
+
     text-align: center;
     font-weight: 500;
-    font-size: 14px;
-    gap: 12px;
+
+    font-size: 0.875rem; // 14px
+    gap: 30%;
     transition: all 0.2s ease;
     cursor: pointer;
-    height: 100px;
+    height: 13.5vh;
+  }
+
+  @media screen and (max-width: 480px){
+    .dashboard-btn {
+      margin-bottom: 3%;
+    }
   }
   
   .dashboard-btn i {
-    font-size: 24px;
+    font-size: 1.5rem; // 24px
     color: #1f1f1f;
   }
   
@@ -95,81 +163,122 @@
   }
   
   .section {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 3%;
   }
   
-  .card {
+  @media screen and (max-width: 480px){
+    .section {
+      flex-direction: column;
+      margin-top: 10%;
+    }
+    .section .card, .card-support{
+      margin-bottom: 5%;
+    }
+    .card p{
+      margin-bottom: 5%;
+    }
+  }
+
+  .card, .card-support {
+    flex-basis: 32.5%;
+
     background-color: white;
-    padding: 20px;
+    padding: 1.5%;
     border-radius: 12px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
   }
   
+  .card-support {
+    flex-basis: 49%;
+  }
+
   .section-title {
     font-weight: 600;
-    margin-bottom: 12px;
-    font-size: 15px;
+    margin-bottom: 3.5%;
+    font-size: 0.9375rem; // 15px
   }
   
-  .btns-status {
-    margin-bottom: 12px;
+  @media screen and (max-width: 480px){
+    .section-title {
+      margin-bottom: 6%;
+    }
   }
   
-  .btn-status {
-    font-size: 12px;
-    padding: 6px 12px;
+  .link-pdf {
+    font-size: 0.75rem; // 12px
+    padding: 1.5% 3%;
     border-radius: 6px;
     background-color: #f3f4f6;
     color: #1f1f1f;
     border: none;
-    margin-right: 8px;
+    margin-right: 2.5%;
     cursor: pointer;
   }
-  
-  .btn-status:hover {
+  .link-soporte {
+    font-size: 0.75rem; // 12px
+    padding: 1.5% 3%;
+    border-radius: 6px;
+    background-color: #f3f4f6;
+    color: #1f1f1f;
+    border: none;
+    margin-right: 2.5%;
+    cursor: pointer;
+  }
+
+  .link-pdf:hover {
+    background-color: #e5e7eb;
+  }
+  .link-soporte:hover{
     background-color: #e5e7eb;
   }
   
   .cita {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
+
     background-color: #f9f9f9;
-    padding: 8px 12px;
+    padding: 2% 3%;
     border-radius: 6px;
-    font-size: 14px;
-    margin-bottom: 8px;
+    font-size: 0.875rem; // 14px
+    margin-bottom: 2%;
   }
   
   .alert {
     background-color: #fef3c7;
-    padding: 10px;
-    margin-bottom: 10px;
+    padding: 2%;
+    margin-bottom: 2%;
     border-left: 4px solid #facc15;
     border-radius: 6px;
-    font-size: 14px;
+    font-size: 0.875rem; // 14px
+    
     display: flex;
+    flex-direction: row;
     align-items: center;
-    gap: 8px;
+    gap: 2%;
   }
   
+   .card p small {
+    color: #888;
+    font-size: 0.75rem; // 12px
+  }
+
   .link-pdf {
     display: flex;
+    flex-direction: row;
     align-items: center;
-    gap: 8px;
-    margin-bottom: 10px;
-    font-size: 14px;
-  }
-  
-  .card p small {
-    color: #888;
-    font-size: 12px;
+    
+    gap: 1.5%;
+    margin-bottom: 2%;
+    font-size: 0.875rem; // 14px
   }
 
   .badge {
     display: inline-block;
-    font-size: 11px;
+    font-size: 0.6875rem; // 11px
     padding: 2px 8px;
     border-radius: 6px;
     margin-left: 8px;
