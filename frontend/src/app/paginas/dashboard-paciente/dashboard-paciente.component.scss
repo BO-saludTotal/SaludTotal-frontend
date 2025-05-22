@@ -42,19 +42,17 @@
   }
   
   .logout-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background-color: #e0e0e0;
+    background-color: #1c1c1c;
+    color: white;
     border: none;
-
-    cursor: pointer;
-    font-size: 0.8125rem; // 13px
-
+    
     border-radius: 5px;
-    padding: 3.5% 5.5%;
-    gap: 10%;
+    padding: 5% 7.5%;
+    cursor: pointer;
+  }
+
+  .logout-btn:hover {
+    background-color: red;
   }
   
   .container {

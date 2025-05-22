@@ -49,9 +49,13 @@
     background-color: #1c1c1c;
     color: white;
     border: none;
-    padding: 8px 16px;
+    padding: 12px 20px;
     border-radius: 6px;
     cursor: pointer;
+  }
+
+  .logout-btn:hover {
+    background-color: red;
   }
   
   main {

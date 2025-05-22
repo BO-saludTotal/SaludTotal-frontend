@@ -78,8 +78,12 @@
     border: none;
     
     border-radius: 5px;
-    padding: 3.5% 5.5%;
+    padding: 4% 6.5%;
     cursor: pointer;
+  }
+
+  .logout-btn:hover{
+      background-color: red;
   }
   
   @media screen and (max-width: 480px){
