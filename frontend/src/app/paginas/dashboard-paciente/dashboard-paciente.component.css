@@ -23,7 +23,7 @@
     align-items: center;
     font-weight: bold;
     
-    font-size: 1.125rem; // 18px
+    font-size: 1.125rem; 
   }
   
   .header-right {
@@ -33,7 +33,7 @@
     justify-content: space-between;
     align-items: center;
     
-    font-size: 0.8125rem; // 13px
+    font-size: 0.8125rem; 
   }
   @media screen and (max-width: 480px){
     .header-right {
@@ -42,17 +42,19 @@
   }
   
   .logout-btn {
-    background-color: #1c1c1c;
-    color: white;
-    border: none;
-    
-    border-radius: 5px;
-    padding: 5% 7.5%;
-    cursor: pointer;
-  }
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-  .logout-btn:hover {
-    background-color: red;
+    background-color: #e0e0e0;
+    border: none;
+
+    cursor: pointer;
+    font-size: 0.8125rem; 
+
+    border-radius: 5px;
+    padding: 3.5% 5.5%;
+    gap: 10%;
   }
   
   .container {
@@ -111,7 +113,7 @@
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     cursor: pointer;
-    font-size: 0.875rem; // 14px
+    font-size: 0.875rem; 
     text-align: center;
   
     background-color: #fff;
@@ -126,7 +128,7 @@
   }
   
   .actions button i {
-    font-size: 1.25rem; // 20px
+    font-size: 1.25rem; 
     display: block;
     margin-bottom: 2.5%;
   }
@@ -146,7 +148,7 @@
   
   .appointment p {
     margin: 0.5% 0;
-    font-size: 0.875rem; // 14px
+    font-size: 0.875rem;
   }
 
   .account-options {
@@ -171,7 +173,7 @@
     background-color: #f9f9f9;
     
     border-radius: 8px;
-    font-size: 0.875rem; // 14px
+    font-size: 0.875rem; 
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -198,13 +200,13 @@
   }
   
   .emergency i {
-    font-size: 1.875rem; // 30px
+    font-size: 1.875rem; 
   }
   
   footer {
     text-align: center;
     padding: 1.5% 0;
-    font-size: 0.8125rem; // 13px
+    font-size: 0.8125rem; 
     color: #999;
   }
   

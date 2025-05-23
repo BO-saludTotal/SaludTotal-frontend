@@ -5,7 +5,7 @@ import { RouterModule } from '@angular/router';
   selector: 'app-login-paciente',
   imports: [RouterModule],
   templateUrl: './login-paciente.component.html',
-  styleUrl: './login-paciente.component.scss'
+  styleUrl: './login-paciente.component.css'
 })
 export class LoginPacienteComponent {
       onSubmit() {

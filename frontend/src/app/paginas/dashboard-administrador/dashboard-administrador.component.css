@@ -49,11 +49,11 @@
   }
   
   .user-info .details strong {
-    font-size: 1rem; // 16px
+    font-size: 1rem; 
   }
   
   .user-info .details span {
-    font-size: 0.8125rem; // 13px
+    font-size: 0.8125rem; 
     color: gray;
   }
 
@@ -64,11 +64,11 @@
     justify-content: space-between;
     align-items: center;
     
-    font-size: 0.8125rem; // 13px
+    font-size: 0.8125rem; 
   }
 
   .last-access {
-    font-size: 0.75rem; //12 px
+    font-size: 0.75rem;
     color: #888;
   }
   
@@ -78,12 +78,8 @@
     border: none;
     
     border-radius: 5px;
-    padding: 4% 6.5%;
+    padding: 3.5% 5.5%;
     cursor: pointer;
-  }
-
-  .logout-btn:hover{
-      background-color: red;
   }
   
   @media screen and (max-width: 480px){
@@ -143,7 +139,7 @@
     text-align: center;
     font-weight: 500;
 
-    font-size: 0.875rem; // 14px
+    font-size: 0.875rem; 
     gap: 30%;
     transition: all 0.2s ease;
     cursor: pointer;
@@ -157,7 +153,7 @@
   }
   
   .dashboard-btn i {
-    font-size: 1.5rem; // 24px
+    font-size: 1.5rem; 
     color: #1f1f1f;
   }
   
@@ -202,7 +198,7 @@
   .section-title {
     font-weight: 600;
     margin-bottom: 3.5%;
-    font-size: 0.9375rem; // 15px
+    font-size: 0.9375rem; 
   }
   
   @media screen and (max-width: 480px){
@@ -212,7 +208,7 @@
   }
   
   .link-pdf {
-    font-size: 0.75rem; // 12px
+    font-size: 0.75rem; 
     padding: 1.5% 3%;
     border-radius: 6px;
     background-color: #f3f4f6;
@@ -222,7 +218,7 @@
     cursor: pointer;
   }
   .link-soporte {
-    font-size: 0.75rem; // 12px
+    font-size: 0.75rem; 
     padding: 1.5% 3%;
     border-radius: 6px;
     background-color: #f3f4f6;
@@ -247,7 +243,7 @@
     background-color: #f9f9f9;
     padding: 2% 3%;
     border-radius: 6px;
-    font-size: 0.875rem; // 14px
+    font-size: 0.875rem; 
     margin-bottom: 2%;
   }
   
@@ -257,7 +253,7 @@
     margin-bottom: 2%;
     border-left: 4px solid #facc15;
     border-radius: 6px;
-    font-size: 0.875rem; // 14px
+    font-size: 0.875rem; 
     
     display: flex;
     flex-direction: row;
@@ -267,7 +263,7 @@
   
    .card p small {
     color: #888;
-    font-size: 0.75rem; // 12px
+    font-size: 0.75rem; 
   }
 
   .link-pdf {
@@ -277,12 +273,12 @@
     
     gap: 1.5%;
     margin-bottom: 2%;
-    font-size: 0.875rem; // 14px
+    font-size: 0.875rem; 
   }
 
   .badge {
     display: inline-block;
-    font-size: 0.6875rem; // 11px
+    font-size: 0.6875rem; 
     padding: 2px 8px;
     border-radius: 6px;
     margin-left: 8px;

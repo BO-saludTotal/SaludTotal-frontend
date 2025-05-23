@@ -5,7 +5,7 @@ import { RouterModule } from '@angular/router';
   selector: 'app-registro',
   imports: [RouterModule],
   templateUrl: './registro.component.html',
-  styleUrl: './registro.component.scss'
+  styleUrl: './registro.component.css'
 })
 export class RegistroComponent {
     onSubmit() {

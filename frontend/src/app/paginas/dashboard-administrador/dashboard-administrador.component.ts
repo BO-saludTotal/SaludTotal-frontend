@@ -5,7 +5,7 @@ import { RouterModule } from '@angular/router';
   selector: 'app-dashboard-administrador',
   imports: [RouterModule],
   templateUrl: './dashboard-administrador.component.html',
-  styleUrl: './dashboard-administrador.component.scss'
+  styleUrl: './dashboard-administrador.component.css'
 })
 export class DashboardAdministradorComponent {
   @ViewChild('fileInput') fileInput!: ElementRef<HTMLInputElement>;

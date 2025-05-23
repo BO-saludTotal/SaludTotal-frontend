@@ -5,7 +5,7 @@ import { RouterModule } from '@angular/router';
   selector: 'app-login-doctor',
   imports: [RouterModule],
   templateUrl: './login-doctor.component.html',
-  styleUrl: './login-doctor.component.scss'
+  styleUrl: './login-doctor.component.css'
 })
 export class LoginDoctorComponent {
     onSubmit() {

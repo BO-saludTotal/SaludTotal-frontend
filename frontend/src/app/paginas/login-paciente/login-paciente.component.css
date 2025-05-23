@@ -131,12 +131,12 @@ label {
 
 
 /* Este bloque nuevo es el que centra la caja */
-// :host {
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     height: 100vh;
-// }
+/* :host {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+} */
 
 :host {
     display: flex;
@@ -144,5 +144,3 @@ label {
     align-items: center;
     height: 100vh;
 }
-
-
