@@ -5,7 +5,7 @@ import { RouterModule } from '@angular/router';
   selector: 'app-dashboard-doctor',
   imports: [RouterModule],
   templateUrl: './dashboard-doctor.component.html',
-  styleUrl: './dashboard-doctor.component.scss'
+  styleUrl: './dashboard-doctor.component.css'
 })
 export class DashboardDoctorComponent {
 

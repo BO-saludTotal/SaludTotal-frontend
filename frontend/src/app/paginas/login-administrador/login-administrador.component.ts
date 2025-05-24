@@ -5,7 +5,7 @@ import { RouterModule } from '@angular/router';
   selector: 'app-login-administrador',
   imports: [RouterModule],
   templateUrl: './login-administrador.component.html',
-  styleUrl: './login-administrador.component.scss'
+  styleUrl: './login-administrador.component.css'
 })
 export class LoginAdministradorComponent {
     onSubmit() {

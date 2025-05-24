@@ -5,7 +5,7 @@ import { RouterModule } from '@angular/router';
   selector: 'app-pagina-no-encontrada',
   imports: [RouterModule],
   templateUrl: './pagina-no-encontrada.component.html',
-  styleUrl: './pagina-no-encontrada.component.scss'
+  styleUrl: './pagina-no-encontrada.component.css'
 })
 export class PaginaNoEncontradaComponent {
 
