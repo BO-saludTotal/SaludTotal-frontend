@@ -1,6 +1,6 @@
 <header class="header">
   <div class="logo">
-    <i class='bx bx-building-house'></i>
+    <img src="assets/images/logos/logo-uno.png" alt="Logo de prueba funcional">
     Salud Total Bolivia
   </div>
   <nav class="nav">
@@ -34,33 +34,35 @@
 
 <section class="hero">
   <div class="hero-text">
-    <h1>Lorem ipsum suspendisse risus</h1>
-    <p>Lorem ipsum dolor sit amet consectetur. Laoreet eget amet quam a turpis gravida mauris. Posuere pellentesque ipsum maecenas.</p>
+    <h1>Gestiona tus citas médicas de forma fácil y rápida</h1>
+    <p>Plataforma diseñada para hospitales, médicos y pacientes. Agenda, consulta y organiza tus citas médicas desde un solo lugar.</p>
     <div class="hero-buttons">
-      <button class="btn-black" routerLink="/login-paciente">Iniciar sesión</button>
+      <button class="btn-black" [routerLink]="['/Paciente']">Iniciar sesión</button>
       <button class="btn-white" [routerLink]="['/registro']">Registrarse</button>
     </div>
   </div>
-  <div class="hero-image"></div>
+  <div class="hero-image">
+    <img src="assets/images/home/hospital.jpg" alt="">
+  </div>
 </section>
 
 <section class="services">
   <h2>Nuestros Servicios</h2>
   <div class="service-cards">
     <div class="card">
-      <i class='bx bx-heart'></i>
+      <i class='bx bx-heart' style="color: #6200ee;"></i>
       <h3>Cardiología</h3>
-      <p>Lorem ipsum dolor sit amet consectetur. Scelerisque cras nisl orci nunc mi.</p>
+      <p>Contamos con especialistas en salud cardiovascular y tecnología avanzada para cuidar tu corazón.</p>
     </div>
     <div class="card">
-      <i class='bx bx-brain'></i>
+      <i class='bx bx-brain' style="color: #6200ee;"></i>
       <h3>Neurología</h3>
-      <p>Lorem ipsum dolor sit amet consectetur. Feugiat dictumst scelerisque sit tellus.</p>
+      <p>Diagnóstico y tratamiento de enfermedades del sistema nervioso con un enfoque humano.</p>
     </div>
     <div class="card">
-      <i class='bx bx-stethoscope'></i>
+      <span class="material-symbols-outlined">stethoscope</span>
       <h3>Atención primaria</h3>
-      <p>Lorem ipsum dolor sit amet consectetur. Elit sed mattis id nisl sit aliquam.</p>
+      <p>Atención médica general para toda la familia, desde chequeos preventivos hasta tratamientos básicos.</p>
     </div>
   </div>
 </section>
@@ -69,19 +71,27 @@
   <h2>Nuestros Doctores</h2>
   <div class="doctor-cards">
     <div class="doctor">
-      <div class="circle"></div>
+      <div class="circle">
+        <img src="assets/images/home/doctora-sarah.jpg" alt="">
+      </div>
       <p><strong>Dra. Sarah Campo</strong><br>Cardióloga</p>
     </div>
     <div class="doctor">
-      <div class="circle"></div>
+      <div class="circle">
+        <img src="assets/images/home/doctor-marcelo.jpg" alt="">
+      </div>
       <p><strong>Dr. Marcelo</strong><br>Neurólogo</p>
     </div>
     <div class="doctor">
-      <div class="circle"></div>
+      <div class="circle">
+        <img src="assets/images/home/doctora-emily.jpg" alt="">
+      </div>
       <p><strong>Dra. Emily</strong><br>Pediatra</p>
     </div>
     <div class="doctor">
-      <div class="circle"></div>
+      <div class="circle">
+        <img src="assets/images/home/doctor-james.jpg" alt="">
+      </div>
       <p><strong>Dr. James</strong><br>Médico General</p>
     </div>
   </div>
@@ -90,8 +100,7 @@
 <footer>
   <div class="footer-content">
     <div class="footer-section">
-      <h3>Salud total Bolivia</h3>
-      <p>Lorem ipsum lorem ipsum lorem ipsum</p>
+    <img src="assets/images/logos/logo-tres.png" alt="Logo de prueba funcional">
     </div>
     <div class="footer-section">
       <h4>Links rápidos</h4>

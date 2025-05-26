@@ -18,14 +18,14 @@ body {
 
 .icon-user {
     font-size: 60px;
-    color: #333;
+    color: #677FE8;
     margin-bottom: 10px;
 }
 
 h2 {
     font-size: 24px;
     margin-bottom: 5px;
-    color: #333;
+    color: #677FE8;
 }
 
 .subtext {
@@ -80,7 +80,7 @@ label {
 
 .btn {
     width: 100%;
-    background-color: #111;
+    background-color: #677FE8;
     color: white;
     padding: 12px;
     border: none;
@@ -91,7 +91,7 @@ label {
 }
 
 .btn:hover {
-    background-color: #333;
+    background-color: #3e4d8c;
 }
 
 .register-text {
@@ -100,9 +100,14 @@ label {
 }
 
 .register-text a {
-    color: #000;
+    color: #677FE8;
     text-decoration: none;
     font-weight: bold;
+}
+
+.register-text a:hover {
+    text-decoration: underline;
+    color: #3e4d8c;
 }
 
 .back-btn {
@@ -110,13 +115,17 @@ label {
     top: 20px;
     left: 20px;
     background: none;
-    color: #333;
+    color: #677FE8;
     text-decoration: none;
     font-size: 14px;
     font-weight: 600;
     display: flex;
     align-items: center;
     gap: 5px;
+}
+
+.back-btn:hover {
+    color: #3e4d8c;
 }
 
 .back-btn i {
