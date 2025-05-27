@@ -1,0 +1,40 @@
+<a routerLink="/" class="back-btn">
+  <i class='bx bx-arrow-back'></i> Volver
+</a>
+
+<div class="login-box">
+  <i class='bx bx-user-circle icon-user'></i>
+  <h2>Iniciar Sesión</h2>
+  <p class="subtext">Por favor ingrese sus credenciales</p>
+
+  <form (ngSubmit)="onSubmit()">
+    <label for="ci">Carnet de Identidad</label>
+    <div class="input-box">
+      <i class='bx bxs-id-card'></i>
+      <input type="text" id="ci" placeholder="Ingresa tu carnet de identidad" name="ci">
+    </div>
+
+    <label for="codigo">Código</label>
+    <div class="input-box">
+      <i class='bx bxs-key'></i>
+      <input type="text" id="codigo" placeholder="Ingresa el código de afiliación" name="codigo">
+    </div>
+
+    <label for="password">Contraseña</label>
+    <div class="input-box">
+      <i class='bx bxs-lock-alt'></i>
+      <input type="password" id="password" placeholder="Ingresa la contraseña" name="password">
+    </div>
+
+    <div class="options">
+      <label><input type="checkbox"> Recuérdame</label>
+      <a href="#">¿Olvidaste la contraseña?</a>
+    </div>
+
+    <button type="submit" class="btn">Iniciar sesión</button>
+
+    <p class="register-text">
+      ¿No tienes una cuenta? <a routerLink="/registro">Registrarse</a>
+    </p>
+  </form>
+</div>
