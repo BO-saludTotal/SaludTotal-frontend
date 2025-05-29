@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class UsuarioService {
 
-  private apiUrl = 'http://localhost:3000/users';
+  private apiUrl = 'https://saludtotal-backend.onrender.com/users';
 
   constructor(private http: HttpClient) {}
 
