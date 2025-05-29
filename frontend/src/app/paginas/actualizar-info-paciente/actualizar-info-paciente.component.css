@@ -38,7 +38,7 @@
     display: flex;
     align-items: center;
     gap: 5px;
-
+    color: #111; /* Hereda el color del elemento padre */
     text-decoration: none;
     font-weight: 600;
 }
@@ -181,3 +181,4 @@ form h3 {
     flex-basis: 5%;
     font-size: 1.125rem; /*18px*/
 }
+
