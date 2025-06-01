@@ -33,7 +33,7 @@ jobs:
           path: frontend/dist
 
       - name: test
-        run: npm run test
+        run: ng test
 
       - name: Operation finish
 
