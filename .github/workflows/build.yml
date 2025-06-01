@@ -37,6 +37,7 @@ jobs:
           path: frontend/dist
 
       - name: Operation finish
+        run: echo "operacion exitosa"
 
 
 
