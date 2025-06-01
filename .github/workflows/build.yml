@@ -26,14 +26,15 @@ jobs:
         working-directory: frontend
         run: npm run build
 
+      - name: Run test
+        run: npm test -- --watch=false --browsers=ChromeHeadless
+        working-directory: frontend
+
       - name: Upload build artifact
         uses: actions/upload-artifact@v4
         with:
           name: angular-build
           path: frontend/dist
-
-      - name: test
-        run: ng test
 
       - name: Operation finish
 
