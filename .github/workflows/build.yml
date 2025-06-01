@@ -1,9 +1,10 @@
-name: Build Frontend
+name: CI Build Frontend
 
 on:
   push:
-    branches: [main, develop]
-  pull_request:
+    branches:
+      - main
+      - develop
 
 jobs:
   build:
@@ -30,3 +31,13 @@ jobs:
         with:
           name: angular-build
           path: frontend/dist
+
+      - name: test
+        run: npm run test
+
+      - name: Operation finish
+
+
+
+
+
