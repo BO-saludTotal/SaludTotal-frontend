@@ -24,7 +24,7 @@ jobs:
 
       - name: Build Angular
         working-directory: frontend
-        run: ng build
+        run: npm run build
 
       - name: Upload build artifact
         uses: actions/upload-artifact@v4
