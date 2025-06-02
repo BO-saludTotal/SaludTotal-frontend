@@ -22,7 +22,8 @@ header {
   .user-info {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
+    align-items: center;
     flex-basis: 20.5%;
   }
   
@@ -32,6 +33,7 @@ header {
 
     background-color: #ddd;
     border-radius: 50%;
+    margin-right: 5%;
   }
 
   .user-info .details {
@@ -50,7 +52,7 @@ header {
 
   .header-right {
     display: flex;
-    flex-basis: 19%;
+    flex-basis: 30%;
     
     justify-content: space-between;
     align-items: center;
@@ -61,15 +63,16 @@ header {
   .last-access {
     font-size: 0.75rem;
     color: #888;
-  }
-  
+  } 
   .logout-btn {
-    background-color: #1c1c1c;
+    background-color: #3b82f6;
     color: white;
     border: none;
     
+    width: 50%;
+
     border-radius: 5px;
-    padding: 3.5% 5.5%;
+    padding: 2% 5.5%;
     cursor: pointer;
   }
   
@@ -91,11 +94,11 @@ header {
     align-items: center;
     justify-content: center;
     background-color: #ffffff;
-    border: 1.5px solid #e5e7eb;
+    border: 1px solid #3b82f6;
     border-radius: 12px;
     padding: 20px;
     text-align: center;
-    font-weight: 500;
+    font-weight: bold;
     font-size: 14px;
     gap: 12px;
     transition: all 0.2s ease;
@@ -105,11 +108,11 @@ header {
   
   .dashboard-btn i {
     font-size: 24px;
-    color: #1f1f1f;
+    color: #3b82f6;
+    font-weight: bold;
   }
   
   .dashboard-btn:hover {
-    border-color: #3b82f6;
     background-color: #f0f9ff;
   }
   
@@ -124,6 +127,7 @@ header {
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
+    border: 1px solid #3b82f6;
   }
   
   .section-title {
