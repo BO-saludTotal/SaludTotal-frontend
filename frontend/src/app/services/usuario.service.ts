@@ -13,4 +13,9 @@ export class UsuarioService {
   registrarUsuario(data: any) {
     return this.http.post(`${this.apiUrl}/register`, data);
   }
+
+  loginUsuario(data: any) {
+  return this.http.post('https://saludtotal-backend.onrender.com/auth/login', data);
+}
+
 }
