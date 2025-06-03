@@ -1,0 +1,239 @@
+header,main,footer {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f9f9f9; /* o rojo si lo deseas */
+  color: #1f1f1f;
+  margin: 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  background-color: #fff;
+  padding: 1% 2.5%;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.paciente-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.paciente-info .foto {
+  width: 50px;
+  height: 50px;
+  background-color: #ddd;
+  border-radius: 50%;
+}
+
+.paciente-info .datos {
+  display: flex;
+  flex-direction: column;
+}
+
+.paciente-info .datos strong {
+  font-size: 1rem;
+}
+
+.paciente-info .datos .identificadores {
+  display: flex;
+  gap: 24px;
+  margin-top: 2%;
+  font-size: 0.9125rem;
+  color: #555;
+}
+
+.paciente-info .datos .identificadores span i {
+  margin-right: 4px;
+  color: #555;
+  font-weight: bold;
+}
+
+.header-right {
+  display: flex;
+  gap: 12px;
+}
+
+.header-right .volver-btn,
+.header-right .logout-btn {
+  display: flex;
+  align-items: flex-end;
+
+  background-color: #111827; 
+  color: #fff;
+  border: 1.5px solid #555;
+  border-radius: 5px;
+  padding: 8px 16px;
+  font-size: 0.8425rem;
+  cursor: pointer;
+  gap: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.header-right .volver-btn i,
+.header-right .logout-btn i{
+
+    font-weight: bold;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  min-height: 100vh;
+  width: 100vw;
+  padding-left: 23%;
+  padding-right: 23%;
+  padding-top: 2%;
+  padding-bottom: 5%;
+}
+
+.alertas-container {
+  display: flex;
+  gap: 12px;
+}
+
+.badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8125rem;
+  padding: 1% 1.5%;
+  border-radius: 6px;
+  color: #fff;
+  font-weight: 500;
+}
+
+.alerta-chronica {
+  background-color: #ef4444; 
+}
+
+.alerta-alergia {
+  background-color: #f97316; 
+}
+
+.filtros-container {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 16px;
+  align-items: flex-end;
+  background-color: #fff;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e5e5e5;
+}
+
+.filtros-container .rango-fechas,
+.filtros-container .selector {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.8125rem;
+}
+
+.filtros-container .rango-fechas input[type="date"],
+.filtros-container .selector select {
+  padding: 6px 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.8125rem;
+}
+
+.filtros-container .rango-fechas span {
+  align-self: center;
+  margin: 0 8px;
+  font-size: 1.125rem;
+  color: #666;
+}
+
+.buscar-btn,
+.descargar-btn {
+  background-color: #111827; 
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 16px;
+  font-size: 0.8125rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background-color 0.2s ease;
+  white-space: nowrap;
+}
+
+.buscar-btn:hover,
+.descargar-btn:hover {
+  background-color: #1f2937;
+}
+
+.timeline {
+  position: relative;
+  padding-left: 16px;
+  border-left: 2px solid #e5e5e5;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.timeline .registro {
+  display: flex;
+  justify-content: space-between;
+  
+  gap: 12px;
+  background-color: #fff;
+  padding: 12px 16px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  border: 1px solid #e5e5e5;
+  position: relative;
+}
+
+.timeline .registro::before {
+  content: '';
+  position: absolute;
+  left: -11px;
+  top: 16px;
+  width: 20px;
+  height: 20px;
+  background-color: #111827;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.timeline .registro .contenido {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.timeline .registro .titulo-registro {
+  font-weight: 600;
+  font-size: 0.9375rem;
+}
+
+.timeline .registro .detalle-linea {
+  font-size: 0.8125rem;
+  color: #555;
+}
+
+.timeline .registro .descripcion-linea {
+  font-size: 0.8125rem;
+  color: #666;
+}
+
+.timeline .registro .fecha {
+  font-size: 0.8125rem;
+  color: #888;
+}
+
+footer {
+  text-align: center;
+  padding: 16px 0;
+  font-size: 0.8125rem;
+  color: #888;
+  background-color: #fff;
+}
