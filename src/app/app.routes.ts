@@ -11,6 +11,7 @@ import { PaginaNoEncontradaComponent } from './paginas/pagina-no-encontrada/pagi
 import { ActualizarInfoPacienteComponent } from './paginas/actualizar-info-paciente/actualizar-info-paciente.component';
 import { AutentificacionPacienteComponent } from './paginas/autentificacion-paciente/autentificacion-paciente.component';
 import { CambiarContraPacienteComponent } from './paginas/cambiar-contra-paciente/cambiar-contra-paciente.component';
+import { PacienteHistorialMedicoComponent } from './paginas/paciente-historial-medico/paciente-historial-medico.component';
 
 export const routes: Routes = [
     {path: 'home', component: HomeComponent},
@@ -22,6 +23,7 @@ export const routes: Routes = [
     {path: 'dashboard-administrador', component: DashboardAdministradorComponent},
     {path: 'dashboard-doctor', component: DashboardDoctorComponent},
     {path: 'actualizar-info-paciente', component: ActualizarInfoPacienteComponent},
+    {path: 'paciente-historial-medico', component: PacienteHistorialMedicoComponent},
     {path: 'autentificacion-paciente', component: AutentificacionPacienteComponent},
     {path: 'cambiar-contra-paciente', component: CambiarContraPacienteComponent},
     {path: '', redirectTo: '/home', pathMatch: 'full'},
