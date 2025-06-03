@@ -20,7 +20,7 @@ export class LoginPacienteComponent {
   constructor(private api: ApiService, private router: Router) {}
 
   onSubmit() {
-    if (this.usuario.ci && this.usuario.password) {
+    if (this.usuario.username && this.usuario.password) {
       this.api.post('auth/login', this.usuario).subscribe({
         next: (res: any) => {
           console.log('Login exitoso:', res);
