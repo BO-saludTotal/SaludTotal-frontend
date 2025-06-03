@@ -84,8 +84,8 @@ main {
   gap: 32px;
   min-height: 100vh;
   width: 100vw;
-  padding-left: 23%;
-  padding-right: 23%;
+  padding-left: 30%;
+  padding-right: 30%;
   padding-top: 2%;
   padding-bottom: 5%;
 }
@@ -117,6 +117,7 @@ main {
 .filtros-container {
   display: flex;
   flex-wrap: nowrap;
+  flex-direction: column;
   gap: 16px;
   align-items: flex-end;
   background-color: #fff;
@@ -125,7 +126,19 @@ main {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
   border: 1px solid #e5e5e5;
 }
-
+.caja-selectores{
+  display: flex;
+  justify-content: flex-start;
+  gap: 6%;
+  align-items: center;
+  width: 100%;
+}
+.caja-btns{
+  display: flex;
+  gap: 4%;
+  justify-content: flex-end;
+  width: 100%;
+}
 .filtros-container .rango-fechas,
 .filtros-container .selector {
   display: flex;
