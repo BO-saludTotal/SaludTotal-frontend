@@ -13,7 +13,7 @@ import { ApiService } from '../../services/api.service';
 })
 export class LoginPacienteComponent {
   usuario = {
-    ci: '',
+    username: '',
     password: ''
   };
 
