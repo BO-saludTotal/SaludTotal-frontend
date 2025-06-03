@@ -1,93 +1,48 @@
-<header>
-  <div class="paciente-info">
-    <div class="foto"></div>
-    <div class="datos">
-      <strong>María González</strong>
-      <div class="identificadores">
-        <span><i class='bx bx-id-card'></i> 12345678M</span>
-        <span><i class='bx bx-gift'></i> 14/02/1991</span>
+<div class="container mt-4">
+  <h2 class="mb-4">Historial Médico del Paciente</h2>
+
+  @if (cargando) {
+    <div class="text-center">
+      <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Cargando...</span>
+      </div>
+      <p>Cargando historial médico...</p>
+    </div>
+  }
+
+  @if (error) {
+    <div class="alert alert-danger">
+      {{ error }}
+      <button class="btn btn-sm btn-outline-danger ms-2" (click)="cargarHistorial()">
+        Reintentar
+      </button>
+    </div>
+  }
+
+  @if (!cargando && entradasHistorial.length === 0 && !error) {
+    <div class="alert alert-info">
+      No se encontraron registros médicos para este paciente.
+    </div>
+  }
+
+  @for (entrada of entradasHistorial; track entrada.id) {
+    <div class="card mb-3">
+      <div class="card-header d-flex justify-content-between align-items-center">
+        <span class="fw-bold">{{ entrada.fecha | date:'dd/MM/yyyy - HH:mm' }}</span>
+        <span class="badge bg-primary">{{ entrada.medico }}</span>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title text-primary">Diagnóstico:</h5>
+        <p class="card-text">{{ entrada.diagnostico }}</p>
+        
+        <h5 class="card-title text-primary mt-3">Tratamiento:</h5>
+        <p class="card-text">{{ entrada.tratamiento }}</p>
+        
+        @if (entrada.observaciones) {
+          <h5 class="card-title text-primary mt-3">Observaciones:</h5>
+          <p class="card-text">{{ entrada.observaciones }}</p>
+        }
       </div>
     </div>
-  </div>
-
-  <div class="header-right">
-    <button class="volver-btn"><i class='bx bx-arrow-back'></i> Volver a Inicio</button>
-    <button class="logout-btn"><i class='bx bx-log-out'></i> Cerrar sesión</button>
-  </div>
-</header>
-
-<main>
-  <div class="alertas-container">
-    <div class="badge alerta-chronica">
-      <i class='bx bxs-heart'></i> Hipertensión crónica
-    </div>
-    <div class="badge alerta-alergia">
-      <i class='bx bxs-error'></i> Alérgica a la penicilina
-    </div>
-  </div>
-
-  <div class="filtros-container">
-    <div class="caja-selectores">
-      <div class="rango-fechas">
-      <label>Rango de fechas</label>
-      <input type="date" />
-      <span>–</span>
-      <input type="date" />
-    </div>
-    <div class="selector">
-      <label>Tipo de registro</label>
-      <select>
-        <option>Todos</option>
-        <option>Consulta médica</option>
-        <option>Análisis de sangre</option>
-        <option>Prescripción</option>
-        <option>Vacunación</option>
-        <option>Hospitalización</option>
-        <option>Nacimiento</option>
-      </select>
-    </div>
-    <div class="selector">
-      <label>Institución médica</label>
-      <select>
-        <option>Todas</option>
-        <option>Hospital Nacional</option>
-        <option>Laboratorio Salud</option>
-        <option>Clínica Central</option>
-      </select>
-    </div>
-    </div>
-    <div class="caja-btns">
-      <button class="buscar-btn"><i class='bx bx-search'></i> Buscar</button>
-    <button class="descargar-btn"><i class='bx bxs-cloud-download'></i> Descargar historial (PDF firmado)</button>
-    </div>
-  </div>
-
-  <div class="timeline">
-
-    <!--falta interfaz-->
-
-    <!--@for ( producto of listaDeHistoriales; track historialn.id){ 
-    <div> 
-      <app-producto [historial]="historial"></app-producto> 
-    </div> 
-    } @empty { 
-      <p>No existen registros</p> 
-    }-->
-    
-    <div class="registro">
-      <div class="contenido">
-        <div class="titulo-registro">Consulta médica</div>
-        <div class="detalle-linea">Dr. Carlos Ruiz – Hospital Nacional</div>
-        <div class="descripcion-linea">Diagnóstico: Gripe común</div>
-      </div>
-      <div class="fecha">08/04/2025</div>
-    </div>
-
-
-  </div>
-</main>
-
-<footer>
-  © 2025 Salud Total Bolivia. All rights reserved.
-</footer>
-
+  }
+</div>
