@@ -1,8 +1,6 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './paginas/home/home.component';
-import { LoginPacienteComponent } from './paginas/login-paciente/login-paciente.component';
-import { LoginAdministradorComponent } from './paginas/login-administrador/login-administrador.component';
-import { LoginDoctorComponent } from './paginas/login-doctor/login-doctor.component';
+import { LoginComponent } from './paginas/login/login.component'; // Ajusta el path si es necesario
 import { RegistroComponent } from './paginas/registro/registro.component';
 import { DashboardPacienteComponent } from './paginas/dashboard-paciente/dashboard-paciente.component';
 import { DashboardAdministradorComponent } from './paginas/dashboard-administrador/dashboard-administrador.component';
@@ -14,9 +12,7 @@ import { CambiarContraPacienteComponent } from './paginas/cambiar-contra-pacient
 
 export const routes: Routes = [
     {path: 'home', component: HomeComponent},
-    {path: 'login-paciente', component: LoginPacienteComponent},
-    {path: 'login-administrador', component: LoginAdministradorComponent},
-    {path: 'login-doctor', component: LoginDoctorComponent},
+    { path: 'login', component: LoginComponent },
     {path: 'registro', component: RegistroComponent},
     {path: 'dashboard-paciente', component: DashboardPacienteComponent},
     {path: 'dashboard-administrador', component: DashboardAdministradorComponent},
