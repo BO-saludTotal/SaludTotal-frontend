@@ -5,13 +5,13 @@ import { FormsModule } from '@angular/forms';
 import { ApiService } from '../../services/api.service';
 
 @Component({
-  selector: 'app-login-paciente',
+  selector: 'app-login',
   standalone: true,
   imports: [RouterModule, CommonModule, FormsModule],
-  templateUrl: './login-paciente.component.html',
-  styleUrl: './login-paciente.component.css'
+  templateUrl: './login.component.html',
+  styleUrl: './login.component.css'
 })
-export class LoginPacienteComponent {
+export class LoginComponent {
   usuario = {
     username: '',
     password: ''
@@ -25,11 +25,29 @@ export class LoginPacienteComponent {
         next: (res: any) => {
           console.log('Login exitoso:', res);
           localStorage.setItem('token', res.accessToken);
-          this.router.navigate(['/dashboard-paciente']);
+
+          // Derivar según roleId
+          switch (res.roleId) {
+            case 1:
+              this.router.navigate(['/dashboard-gobierno']);
+              break;
+            case 2:
+              this.router.navigate(['/dashboard-paciente']);
+              break;
+            case 3:
+              this.router.navigate(['/dashboard-doctor']);
+              break;
+            case 4:
+              this.router.navigate(['/dashboard-administrador']);
+              break;
+            default:
+              alert('Rol no reconocido');
+              break;
+          }
         },
         error: (err) => {
           console.error('Error en login:', err);
-          alert('CI o contraseña incorrectos');
+          alert('Usuario o contraseña incorrectos');
         }
       });
     } else {

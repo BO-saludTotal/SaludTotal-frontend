@@ -9,26 +9,7 @@
     <a href="#">Doctores</a>
     <a href="#">Citas</a>
     <a href="#">Contacto</a>
-
-    <div class="dropdown">
-      <button class="dropbtn">Iniciar sesión</button>
-      <div class="dropdown-content">
-        <a [routerLink]="['/login-paciente']">Paciente</a>
-        <a [routerLink]="['/login-doctor']">Doctor</a>
-        <a [routerLink]="['/login-administrador']">Administrador</a>
-      </div>
-    </div>
-  </nav>
-  <nav class="nav-mini">
-    <a href="#">Citas</a>
-    <div class="dropdown">
-      <button class="dropbtn">Iniciar sesión</button>
-      <div class="dropdown-content">
-        <a [routerLink]="['/login-paciente']">Paciente</a>
-        <a [routerLink]="['/login-doctor']">Doctor</a>
-        <a [routerLink]="['/login-administrador']">Administrador</a>
-      </div>
-    </div>
+    <a class="login-btn" routerLink="/login">Iniciar sesión</a>
   </nav>
 </header>
 
@@ -37,12 +18,12 @@
     <h1>Gestiona tus citas médicas de forma fácil y rápida</h1>
     <p>Plataforma diseñada para hospitales, médicos y pacientes. Agenda, consulta y organiza tus citas médicas desde un solo lugar.</p>
     <div class="hero-buttons">
-      <button class="btn-black" [routerLink]="['/Paciente']">Iniciar sesión</button>
+      <button class="btn-black" [routerLink]="['/login']">Iniciar sesión</button>
       <button class="btn-white" [routerLink]="['/registro']">Registrarse</button>
     </div>
   </div>
   <div class="hero-image">
-    <img src="assets/images/home/hospital.jpg" alt="">
+    <img src="assets/images/home/hospital.jpg" alt="El frente de un hospital">
   </div>
 </section>
 
