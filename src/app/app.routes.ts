@@ -10,6 +10,7 @@ import { ActualizarInfoPacienteComponent } from './paginas/actualizar-info-pacie
 import { AutentificacionPacienteComponent } from './paginas/autentificacion-paciente/autentificacion-paciente.component';
 import { CambiarContraPacienteComponent } from './paginas/cambiar-contra-paciente/cambiar-contra-paciente.component';
 import { PacienteHistorialMedicoComponent } from './paginas/paciente-historial-medico/paciente-historial-medico.component';
+import { SubirDocPacienteComponent } from './paginas/subir-doc-paciente/subir-doc-paciente.component';
 
 export const routes: Routes = [
     {path: 'home', component: HomeComponent},
@@ -21,6 +22,7 @@ export const routes: Routes = [
     {path: 'actualizar-info-paciente', component: ActualizarInfoPacienteComponent},
     {path: 'paciente-historial-medico', component: PacienteHistorialMedicoComponent},
     {path: 'autentificacion-paciente', component: AutentificacionPacienteComponent},
+    {path: 'subir-doc-paciente', component: SubirDocPacienteComponent},
     {path: 'cambiar-contra-paciente', component: CambiarContraPacienteComponent},
     {path: '', redirectTo: '/home', pathMatch: 'full'},
     {path: '**', component: PaginaNoEncontradaComponent},
