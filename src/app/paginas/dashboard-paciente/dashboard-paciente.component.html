@@ -24,10 +24,10 @@
   </section>
 
   <section class="actions">
-    <button><i class='bx bxs-folder'></i> Historial Médico</button>
+    <button [routerLink]="['/paciente-historial-medico']"><i class='bx bxs-folder'></i> Historial Médico</button>
     <button><i class='bx bxs-calendar-plus'></i> Agendar Cita</button>
     <button><i class='bx bxs-calendar'></i> Citas Médicas</button>
-    <button><i class='bx bxs-edit'></i> Actualizar Información</button>
+    <button [routerLink]="['/actualizar-info-paciente']"><i class='bx bxs-edit'></i> Actualizar Información</button>
   </section>
 
   <section class="appointment">
@@ -40,9 +40,9 @@
   <section class="account">
     <h3>Manejo de cuenta</h3>
     <div class="account-options">
-      <button><i class='bx bxs-key'></i> Cambiar contraseña</button>
-      <button><i class='bx bxs-shield'></i> Autentificación de dos factores</button>
-      <button><i class='bx bxs-file-upload'></i> Subir documento</button>
+      <button [routerLink]="['/cambiar-contra-paciente']"><i class='bx bxs-key'></i> Cambiar contraseña</button>
+      <button [routerLink]="['/autentificacion-paciente']"><i class='bx bxs-shield'></i> Autentificación de dos factores</button>
+      <button [routerLink]="['/subir-doc-paciente']"><i class='bx bxs-file'></i> Subir documento</button>
     </div>
   </section>
 

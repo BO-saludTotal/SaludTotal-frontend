@@ -46,7 +46,7 @@
     justify-content: space-between;
     align-items: center;
 
-    font-size: 0.8125rem; 
+    font-size: 1rem; 
 
   }
   @media screen and (max-width: 480px){
@@ -62,20 +62,19 @@
   
   .logout-btn {
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     justify-content: center;
 
-    width: 50%;
-
+    width: 45%;
     background-color: #677FE8;
     border: none;
     color: #fff;
     cursor: pointer;
-    font-size: 0.8125rem; 
+    font-size: 0.9125rem; 
 
     border-radius: 5px;
     padding: 2% 5.5%;
-    gap: 10%;
+    gap: 8%;
   }
   
   .container {
@@ -122,7 +121,6 @@
   }
 
   .actions :hover{
-    border-color: #3b82f6;
     background-color: #f0f9ff;
   }
   
@@ -156,10 +154,12 @@
   }
   
   .appointment, .account, .actions button, .welcome{
-    border: 1px solid #3b82f6;
+      background-color: #fff;
+      border: 1px solid #eee;
+      box-shadow: 0 2px 6px rgba(59, 130, 246, 0.3);
   }
   .appointment, .account {
-    background-color: #fff;
+    background-color: #fff; 
 
     padding: 1.5%;
 
