@@ -4,16 +4,16 @@
     Salud Total Bolivia
   </div>
   <nav class="nav">
-    <a routerLink="/">Inicio</a>
-    <a href="#">Servicio</a>
-    <a href="#">Doctores</a>
-    <a href="#">Citas</a>
-    <a href="#">Contacto</a>
+     <a href="#" (click)="irAInicio($event)">Inicio</a>
+    <a href="#" (click)="irAServicios($event)">Servicios</a>
+    <a href="#" (click)="irADoctores($event)">Doctores</a>
+    <a [routerLink]="['/login']">Citas</a>
+    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=fdasd@rock.com" target="_blank" rel="noopener"> Contacto</a>
     <a class="login-btn" routerLink="/login">Iniciar sesión</a>
   </nav>
 </header>
 
-<section class="hero">
+<section class="hero" id="inicio">
   <div class="hero-text">
     <h1>Gestiona tus citas médicas de forma fácil y rápida</h1>
     <p>Plataforma diseñada para hospitales, médicos y pacientes. Agenda, consulta y organiza tus citas médicas desde un solo lugar.</p>
@@ -26,9 +26,8 @@
     <img src="assets/images/home/hospital.jpg" alt="El frente de un hospital">
   </div>
 </section>
-
 <section class="services">
-  <h2>Nuestros Servicios</h2>
+  <h2 id="servicios" >Nuestros Servicios</h2>
   <div class="service-cards">
     <div class="card">
       <i class='bx bx-heart' style="color: #6200ee;"></i>
@@ -49,7 +48,7 @@
 </section>
 
 <section class="doctors">
-  <h2>Nuestros Doctores</h2>
+  <h2 id="doctores">Nuestros Doctores</h2>
   <div class="doctor-cards">
     <div class="doctor">
       <div class="circle">
@@ -89,15 +88,53 @@
     </div>
     <div class="footer-section">
       <h4>Contacto</h4>
-      <p>Av América 210<br>Cochabamba<br>contacto&#64;medico.com<br>77782365</p>
+      <p>
+        <a
+          href="https://www.google.com/maps/search/?api=1&query=Av+Am%C3%A9rica+210,+Cochabamba"
+          target="_blank"
+          rel="noopener"
+        >
+          Av América 210, Cbba
+        </a>
+        <br>
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=fdasd@rock.com" target="_blank" rel="noopener"> contacto&#64;medico.com</a>
+        <br>
+        <a href="tel:+59177782365">
+          77782365
+        </a>
+      </p>
     </div>
     <div class="footer-section">
       <h4>Síguenos</h4>
       <div class="socials">
-        <i class='bx bxl-facebook'></i>
-        <i class='bx bxl-twitter'></i>
-        <i class='bx bxl-instagram'></i>
-        <i class='bx bxl-linkedin'></i>
+        <a
+          href="https://www.facebook.com/SaludTotalBolivia"
+          target="_blank"
+          rel="noopener"
+        >
+          <i class="bx bxl-facebook"></i>
+        </a>
+        <a
+          href="https://twitter.com/SaludTotalBo"
+          target="_blank"
+          rel="noopener"
+        >
+          <i class="bx bxl-twitter"></i>
+        </a>
+        <a
+          href="https://www.instagram.com/SaludTotalBolivia"
+          target="_blank"
+          rel="noopener"
+        >
+          <i class="bx bxl-instagram"></i>
+        </a>
+        <a
+          href="https://www.linkedin.com/company/salud-total-bolivia"
+          target="_blank"
+          rel="noopener"
+        >
+          <i class="bx bxl-linkedin"></i>
+        </a>
       </div>
     </div>
   </div>

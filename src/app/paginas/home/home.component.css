@@ -74,7 +74,9 @@
 }
 
 
-
+#inicio {
+  scroll-margin-top: 12vh;   
+}
 /* Desde aca el el HERO */
 
 .hero {
@@ -163,7 +165,9 @@
     }
 }
 
-
+#servicios {
+  scroll-margin-top: 15vh;   
+}
 /* Desde aca los SERVICIOS */
 .services{
     display: flex;
@@ -314,8 +318,8 @@ footer {
     text-decoration: none;
     color: #000;
     font-size: 0.875rem;
+    cursor: pointer;
 }
-
 .socials i {
     font-size: 1.25rem;
     margin-right: 10px;
