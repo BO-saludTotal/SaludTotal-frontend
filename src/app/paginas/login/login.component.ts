@@ -19,6 +19,7 @@ export class LoginComponent {
 
   constructor(private api: ApiService, private router: Router) {}
 
+main
 onSubmit() {
   if (this.usuario.username && this.usuario.password) {
     this.api.post('auth/login', this.usuario).subscribe({
@@ -49,6 +50,44 @@ onSubmit() {
             alert('Rol no reconocido');
             console.error('Estructura de roles inválida:', res.user?.roles);
             break;
+  onSubmit() {
+    if (this.usuario.username && this.usuario.password) {
+      this.api.post('auth/login', this.usuario).subscribe({
+        next: (res: any) => {
+          console.log('Login exitoso:', res);
+
+          // Guardar el token en el localStorage
+          localStorage.setItem('token', res.accessToken);
+
+          // Detectar correctamente el rol desde diferentes estructuras posibles
+          const roleId = res.roleId ?? res.user?.roleId ?? res.data?.roleId;
+
+          console.log('Detectado roleId:', roleId);
+
+          // Redirección según el rol
+          switch (roleId) {
+            case 1:
+              this.router.navigate(['/dashboard-gobierno']);
+              break;
+            case 2:
+              this.router.navigate(['/dashboard-paciente']);
+              break;
+            case 3:
+              this.router.navigate(['/dashboard-doctor']);
+              break;
+            case 4:
+              this.router.navigate(['/dashboard-administrador']);
+              break;
+            default:
+              alert('Rol no reconocido');
+              console.error('No se pudo detectar un roleId válido:', res);
+              break;
+          }
+        },
+        error: (err) => {
+          console.error('Error en login:', err);
+          alert('Usuario o contraseña incorrectos');
+ develop
         }
       },
       error: (err) => {

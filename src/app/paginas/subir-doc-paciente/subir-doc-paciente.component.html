@@ -1,9 +1,9 @@
 <header class="header">
-  <a class="header_volver" routerLink="/home">
+  <a class="header_volver" [routerLink]="['/dashboard-paciente']">
     <i class="bx bx-arrow-back"></i>
     Volver al inicio
   </a>
-  <button class="header_logout">
+  <button class="header_logout" [routerLink]="['/home']">
     <i class="bx bx-log-out"></i>
     Cerrar sesión
   </button>
