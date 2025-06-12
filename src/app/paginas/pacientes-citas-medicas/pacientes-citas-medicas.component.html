@@ -1,27 +1,32 @@
 <div class="citas-container">
-  <!-- Alerta de cita próxima -->
+
   <div class="alerta-cita">
-    <h2># Tienes una cita en menos de 24 horas:</h2>
-    <p>19 mayo 2025, 09:00 - Instituto Nacional de Salud, La Paz</p>
+    <span class="alerta-icono">#</span>
+    <div class="alerta-contenido">
+      <h3>Tienes una cita en menos de 24 horas:</h3>
+      <p>19 mayo 2025, 09:00 - Instituto Nacional de Salud, La Paz</p>
+    </div>
   </div>
 
-  <!-- Alerta de cita perdida -->
   <div class="alerta-perdida">
-    <h2>## Has perdido una cita el 15 mayo 2025.</h2>
-    <p>Tu cuenta tiene restricciones hasta el 22 mayo 2025.</p>
+    <span class="alerta-icono">#</span>
+    <div class="alerta-contenido">
+      <h3>Has perdido una cita el 15 mayo 2025.</h3>
+      <p>Tu cuenta tiene restricciones hasta el 22 mayo 2025.</p>
+    </div>
   </div>
 
-  <!-- Actualización de institución -->
-  <div cla  ss="actualizacion-institucion">
-    <h3>### Actualización de Institución:</h3>
-    <p>El Dr. García no estará disponible el 21 mayo 2025. Tu cita ha sido reprogramada.</p>
+  <div class="actualizacion-institucion">
+    <span class="alerta-icono">#</span>
+    <div class="alerta-contenido">
+      <h3>Actualización de Institución:</h3>
+      <p>El Dr. García no estará disponible el 21 mayo 2025. Tu cita ha sido reprogramada.</p>
+    </div>
   </div>
 
-  <hr>
 
-  <!-- Filtros -->
   <div class="filtros-citas">
-    <h3>**Rango de fechas**</h3>
+    <h3>Rango de fechas</h3>
     <table class="filtros-table">
       <thead>
         <tr>
@@ -33,31 +38,34 @@
       </thead>
       <tbody>
         <tr>
-          <td><input type="date" class="filtro-input"></td>  
+          <td><input type="date" class="filtro-input"></td>
           <td><input type="date" class="filtro-input"></td>
           <td>
             <select class="filtro-select">
               <option>Todas</option>
             </select>
-          </td>   
-          <td><input type="text" placeholder="Buscar por nombre" class="filtro-input"></td>
+          </td>
+          <td>
+            <input type="text" placeholder="Buscar por nombre" class="filtro-input">
+            <button class="btn-buscar">Buscar</button>
+          </td>
         </tr>
       </tbody>
     </table>
   </div>
 
-  <!-- Listado de citas -->
+
   <div class="lista-citas">
     <div class="citas-header">
-      <h3>### Próximas citas</h3>
+      <h3>Próximas citas</h3>
       <button class="btn-citas-anteriores">Citas anteriores</button>
     </div>
 
-    <!-- Cita 1 -->
+
     <div class="cita-item">
-      <div class="cita-fecha-hora">
-        <div class="fecha">19 mayo 2025</div>
-        <div class="hora">09:00</div>
+      <div class="cita-fecha">
+        <strong>19 mayo 2025</strong>
+        <span>09:00</span>
       </div>
       
       <div class="cita-info">
@@ -65,22 +73,23 @@
         <p>La Paz, Av. Central #123</p>
       </div>
       
-      <div class="cita-detalle">
-        <p><strong>Dr. Luis García</strong> Cardiología</p>
+      <div class="cita-medico">
+        <p><strong>Dr. Luis García</strong></p>
+        <p>Cardiología</p>
       </div>
       
       <div class="cita-acciones">
-        <div class="accion-btn confirmar">Confirmar asistencia</div>
-        <div class="accion-btn cancelar">Cancelar</div>
-        <div class="accion-btn reprogramar">Reprogramar</div>
+        <button class="accion-btn confirmar">Confirmar asistencia</button>
+        <button class="accion-btn cancelar">Cancelar</button>
+        <button class="accion-btn reprogramar">Reprogramar</button>
       </div>
     </div>
 
-    <!-- Cita 2 -->
+
     <div class="cita-item">
-      <div class="cita-fecha-hora">
-        <div class="fecha">21 mayo 2025</div>
-        <div class="hora">14:00</div>
+      <div class="cita-fecha">
+        <strong>21 mayo 2025</strong>
+        <span>14:00</span>
       </div>
       
       <div class="cita-info">
@@ -88,14 +97,16 @@
         <p>Cochabamba, Av. Libertad #45</p>
       </div>
       
-      <div class="cita-detalle">
-        <p><strong>Dra. Mariana Pérez</strong> Dermatología</p>
+      <div class="cita-medico">
+        <p><strong>Dra. Mariana Pérez</strong></p>
+        <p>Dermatología</p>
       </div>
       
       <div class="cita-acciones">
-        <div class="accion-btn confirmar">Confirmar asistencia</div>
-        <div class="accion-btn cancelar">Cancelar</div>
-        <div class="accion-btn reprogramar">Reprogramar</div>
+        <button class="accion-btn confirmar">Confirmar asistencia</button>
+        <button class="accion-btn cancelar">Cancelar</button>
+        <button class="accion-btn estado">Pendiente</button>
+        <button class="accion-btn reprogramar">Reprogramar</button>
       </div>
     </div>
   </div>

@@ -22,7 +22,7 @@ export const routes: Routes = [
     {path: 'actualizar-info-paciente', component: ActualizarInfoPacienteComponent},
     {path: 'autentificacion-paciente', component: AutentificacionPacienteComponent},
     {path: 'subir-doc-paciente', component: SubirDocPacienteComponent},
-     { path: 'citas-medicas', component: PacientesCitasMedicasComponent },
+     { path: 'pacientes-citas-medicas', component: PacientesCitasMedicasComponent },
     {path: 'cambiar-contra-paciente', component: CambiarContraPacienteComponent},
     {path: 'paciente-historial-medico/:id', component: PacienteHistorialMedicoComponent },
     {path: '', redirectTo: '/home', pathMatch: 'full'},
