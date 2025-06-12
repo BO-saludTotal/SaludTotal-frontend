@@ -9,7 +9,7 @@ import { ApiService } from '../../services/api.service';
   standalone: true,
   imports: [RouterModule, CommonModule, FormsModule],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
   usuario = {
@@ -19,19 +19,31 @@ export class LoginComponent {
 
   constructor(private api: ApiService, private router: Router) {}
 
+ henryDos
+  onSubmit(): void {
+    if (this.usuario.username && this.usuario.password) {
+      this.api.post('auth/login', this.usuario).subscribe({
+        next: (res: any) => {
+          console.log('Login exitoso:', res);
+
 main
 onSubmit() {
   if (this.usuario.username && this.usuario.password) {
     this.api.post('auth/login', this.usuario).subscribe({
       next: (res: any) => {
         console.log('Login exitoso:', res);
+ main
 
-        localStorage.setItem('token', res.accessToken);
+          // Guardar el token
+          localStorage.setItem('token', res.accessToken);
 
-        // ✅ Extraer roleId correctamente desde el array de roles
-        const roleId = res.user?.roles?.[0]?.id;
+          // Detectar el roleId correctamente desde distintas estructuras posibles
+          const roleId = res.user?.roles?.[0]?.id ?? res.roleId ?? res.user?.roleId ?? res.data?.roleId;
 
-        console.log('Detectado roleId:', roleId);
+          console.log('Detectado roleId:', roleId);
+
+ henryDos
+          // Redireccionar según el roleId
 
         switch (roleId) {
           case 1:
@@ -65,6 +77,7 @@ onSubmit() {
           console.log('Detectado roleId:', roleId);
 
           // Redirección según el rol
+ main
           switch (roleId) {
             case 1:
               this.router.navigate(['/dashboard-gobierno']);
@@ -80,6 +93,15 @@ onSubmit() {
               break;
             default:
               alert('Rol no reconocido');
+ henryDos
+              console.error('Estructura de roles inválida:', res.user?.roles);
+              break;
+          }
+        },
+        error: (err: any) => {
+          console.error('Error en login:', err);
+          alert('Usuario o contraseña incorrectos');
+
               console.error('No se pudo detectar un roleId válido:', res);
               break;
           }
@@ -88,17 +110,11 @@ onSubmit() {
           console.error('Error en login:', err);
           alert('Usuario o contraseña incorrectos');
  develop
+ main
         }
-      },
-      error: (err) => {
-        console.error('Error en login:', err);
-        alert('Usuario o contraseña incorrectos');
-      }
-    });
-  } else {
-    alert('Por favor completa todos los campos');
+      });
+    } else {
+      alert('Por favor completa todos los campos');
+    }
   }
-}
-
-
 }
