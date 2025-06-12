@@ -19,7 +19,7 @@ export class LoginComponent {
 
   constructor(private api: ApiService, private router: Router) {}
 
- onSubmit() {
+onSubmit() {
   if (this.usuario.username && this.usuario.password) {
     this.api.post('auth/login', this.usuario).subscribe({
       next: (res: any) => {
@@ -27,7 +27,9 @@ export class LoginComponent {
 
         localStorage.setItem('token', res.accessToken);
 
+        // ✅ Extraer roleId correctamente desde el array de roles
         const roleId = res.user?.roles?.[0]?.id;
+
         console.log('Detectado roleId:', roleId);
 
         switch (roleId) {
@@ -45,7 +47,7 @@ export class LoginComponent {
             break;
           default:
             alert('Rol no reconocido');
-            console.error('No se pudo detectar un roleId válido:', res);
+            console.error('Estructura de roles inválida:', res.user?.roles);
             break;
         }
       },
@@ -58,5 +60,6 @@ export class LoginComponent {
     alert('Por favor completa todos los campos');
   }
 }
+
 
 }
