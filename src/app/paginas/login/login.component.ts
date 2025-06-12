@@ -3,7 +3,6 @@ import { RouterModule, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ApiService } from '../../services/api.service';
-import { NavigationExtras } from '@angular/router'; // nuevo cambio para enviar el nom de usuario al dashborard
 
 @Component({
   selector: 'app-login',
@@ -32,36 +31,24 @@ onSubmit(): void {
         // Detectar rol
         const rol = res.user?.roles?.[0];
 
-          console.log('Detectado roleId:', roleId); 
-
-          // Creamos un objeto NavigationExtras con nuestro username
-          const extras: NavigationExtras = { // nuevo cambio para enviar el nom de usuario al dashborard
-            state: { username: this.usuario.username }
-          };
-
-          // Redirección según el rol
-          switch (roleId) {
-            case 1:
-              this.router.navigate(['/dashboard-gobierno'], extras); // nuevo cambio pasamos el nuevo obj extras junto con la ruta
-              break;
-            case 2:
-              this.router.navigate(['/dashboard-paciente'], extras);
-              break;
-            case 3:
-              this.router.navigate(['/dashboard-doctor'], extras);
-              break;
-            case 4:
-              this.router.navigate(['/dashboard-administrador'], extras);
-              break;
-            default:
-              alert('Rol no reconocido');
-              console.error('No se pudo detectar un roleId válido:', res);
-              break;
-          }
-        },
-        error: (err) => {
-          console.error('Error en login:', err);
-          alert('Usuario o contraseña incorrectos');
+        console.log('Rol recibido:', rol);
+        switch (rol) {
+          case 'Gobierno':
+            this.router.navigate(['/dashboard-gobierno']);
+            break;
+          case 'Paciente':
+            this.router.navigate(['/dashboard-paciente']);
+            break;
+          case 'Doctor':
+            this.router.navigate(['/dashboard-doctor']);
+            break;
+          case 'Administrador':
+            this.router.navigate(['/dashboard-administrador']);
+            break;
+          default:
+            alert('Rol no reconocido: ' + rol);
+            console.error('Rol inesperado recibido:', rol);
+            break;
         }
       },
       error: (err: any) => {
