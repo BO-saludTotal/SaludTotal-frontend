@@ -8,5 +8,20 @@ import { RouterModule } from '@angular/router';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-
+  irADoctores(e: Event) {
+    e.preventDefault();
+    document.getElementById('doctores')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+  irAServicios(e: Event) {
+    e.preventDefault();
+    document.getElementById('servicios')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+  irAContacto(e: Event) {
+    e.preventDefault();
+    document.getElementById('contacto')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+  irAInicio(e: Event) {
+    e.preventDefault();
+    document.getElementById('inicio')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
 }

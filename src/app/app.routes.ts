@@ -9,7 +9,9 @@ import { PaginaNoEncontradaComponent } from './paginas/pagina-no-encontrada/pagi
 import { ActualizarInfoPacienteComponent } from './paginas/actualizar-info-paciente/actualizar-info-paciente.component';
 import { AutentificacionPacienteComponent } from './paginas/autentificacion-paciente/autentificacion-paciente.component';
 import { CambiarContraPacienteComponent } from './paginas/cambiar-contra-paciente/cambiar-contra-paciente.component';
-
+import { PacienteHistorialMedicoComponent } from './paginas/paciente-historial-medico/paciente-historial-medico.component';
+import { SubirDocPacienteComponent } from './paginas/subir-doc-paciente/subir-doc-paciente.component';
+import { PacientesCitasMedicasComponent } from './paginas/pacientes-citas-medicas/pacientes-citas-medicas.component';
 export const routes: Routes = [
     {path: 'home', component: HomeComponent},
     { path: 'login', component: LoginComponent },
@@ -18,8 +20,12 @@ export const routes: Routes = [
     {path: 'dashboard-administrador', component: DashboardAdministradorComponent},
     {path: 'dashboard-doctor', component: DashboardDoctorComponent},
     {path: 'actualizar-info-paciente', component: ActualizarInfoPacienteComponent},
+    {path: 'paciente-historial-medico', component: PacienteHistorialMedicoComponent},
     {path: 'autentificacion-paciente', component: AutentificacionPacienteComponent},
+    {path: 'subir-doc-paciente', component: SubirDocPacienteComponent},
+     { path: 'citas-medicas', component: PacientesCitasMedicasComponent },
     {path: 'cambiar-contra-paciente', component: CambiarContraPacienteComponent},
     {path: '', redirectTo: '/home', pathMatch: 'full'},
     {path: '**', component: PaginaNoEncontradaComponent},
+
 ];

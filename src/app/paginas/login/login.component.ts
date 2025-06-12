@@ -19,11 +19,20 @@ export class LoginComponent {
 
   constructor(private api: ApiService, private router: Router) {}
 
+ henryDos
   onSubmit(): void {
     if (this.usuario.username && this.usuario.password) {
       this.api.post('auth/login', this.usuario).subscribe({
         next: (res: any) => {
           console.log('Login exitoso:', res);
+
+main
+onSubmit() {
+  if (this.usuario.username && this.usuario.password) {
+    this.api.post('auth/login', this.usuario).subscribe({
+      next: (res: any) => {
+        console.log('Login exitoso:', res);
+ main
 
           // Guardar el token
           localStorage.setItem('token', res.accessToken);
@@ -33,7 +42,42 @@ export class LoginComponent {
 
           console.log('Detectado roleId:', roleId);
 
+ henryDos
           // Redireccionar según el roleId
+
+        switch (roleId) {
+          case 1:
+            this.router.navigate(['/dashboard-gobierno']);
+            break;
+          case 2:
+            this.router.navigate(['/dashboard-paciente']);
+            break;
+          case 3:
+            this.router.navigate(['/dashboard-doctor']);
+            break;
+          case 4:
+            this.router.navigate(['/dashboard-administrador']);
+            break;
+          default:
+            alert('Rol no reconocido');
+            console.error('Estructura de roles inválida:', res.user?.roles);
+            break;
+  onSubmit() {
+    if (this.usuario.username && this.usuario.password) {
+      this.api.post('auth/login', this.usuario).subscribe({
+        next: (res: any) => {
+          console.log('Login exitoso:', res);
+
+          // Guardar el token en el localStorage
+          localStorage.setItem('token', res.accessToken);
+
+          // Detectar correctamente el rol desde diferentes estructuras posibles
+          const roleId = res.roleId ?? res.user?.roleId ?? res.data?.roleId;
+
+          console.log('Detectado roleId:', roleId);
+
+          // Redirección según el rol
+ main
           switch (roleId) {
             case 1:
               this.router.navigate(['/dashboard-gobierno']);
@@ -49,6 +93,7 @@ export class LoginComponent {
               break;
             default:
               alert('Rol no reconocido');
+ henryDos
               console.error('Estructura de roles inválida:', res.user?.roles);
               break;
           }
@@ -56,6 +101,16 @@ export class LoginComponent {
         error: (err: any) => {
           console.error('Error en login:', err);
           alert('Usuario o contraseña incorrectos');
+
+              console.error('No se pudo detectar un roleId válido:', res);
+              break;
+          }
+        },
+        error: (err) => {
+          console.error('Error en login:', err);
+          alert('Usuario o contraseña incorrectos');
+ develop
+ main
         }
       });
     } else {
