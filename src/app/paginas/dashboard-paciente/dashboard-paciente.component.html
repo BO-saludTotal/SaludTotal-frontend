@@ -1,16 +1,11 @@
-
 <header class="header">
-  <!--<div class="logo">
-    <i class='bx bx-building-house'></i>
-    <span>Salud Total Bolivia</span>
-  </div>-->
   <div class="logo">
     <img src="assets/images/logos/logo-uno.png" alt="Logo de prueba funcional">
     Salud Total Bolivia
   </div>
   <div class="header-right">
     <small>Última vez: 2025-05-01 14:30</small>
-    <button class="logout-btn"><i class='bx bx-log-out'></i> Salir</button>
+    <button class="logout-btn" [routerLink]="['/home']"><i class='bx bx-log-out'></i> Salir</button>
   </div>
 </header>
 
@@ -18,8 +13,8 @@
   <section class="welcome">
     <div class="profile-img"></div>
     <div class="welcome-text">
-      <h2>Bienvenido Willy</h2>
-      <p>ID: #12345678</p>
+      <!--username dinámico -->
+      <h2>Bienvenido {{ username }}</h2>
     </div>
   </section>
 
