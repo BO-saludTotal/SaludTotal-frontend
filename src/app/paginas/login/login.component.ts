@@ -9,7 +9,7 @@ import { ApiService } from '../../services/api.service';
   standalone: true,
   imports: [RouterModule, CommonModule, FormsModule],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
   usuario = {
@@ -19,47 +19,47 @@ export class LoginComponent {
 
   constructor(private api: ApiService, private router: Router) {}
 
-onSubmit() {
-  if (this.usuario.username && this.usuario.password) {
-    this.api.post('auth/login', this.usuario).subscribe({
-      next: (res: any) => {
-        console.log('Login exitoso:', res);
+  onSubmit(): void {
+    if (this.usuario.username && this.usuario.password) {
+      this.api.post('auth/login', this.usuario).subscribe({
+        next: (res: any) => {
+          console.log('Login exitoso:', res);
 
-        localStorage.setItem('token', res.accessToken);
+          // Guardar el token
+          localStorage.setItem('token', res.accessToken);
 
-        // ✅ Extraer roleId correctamente desde el array de roles
-        const roleId = res.user?.roles?.[0]?.id;
+          // Detectar el roleId correctamente desde distintas estructuras posibles
+          const roleId = res.user?.roles?.[0]?.id ?? res.roleId ?? res.user?.roleId ?? res.data?.roleId;
 
-        console.log('Detectado roleId:', roleId);
+          console.log('Detectado roleId:', roleId);
 
-        switch (roleId) {
-          case 1:
-            this.router.navigate(['/dashboard-gobierno']);
-            break;
-          case 2:
-            this.router.navigate(['/dashboard-paciente']);
-            break;
-          case 3:
-            this.router.navigate(['/dashboard-doctor']);
-            break;
-          case 4:
-            this.router.navigate(['/dashboard-administrador']);
-            break;
-          default:
-            alert('Rol no reconocido');
-            console.error('Estructura de roles inválida:', res.user?.roles);
-            break;
+          // Redireccionar según el roleId
+          switch (roleId) {
+            case 1:
+              this.router.navigate(['/dashboard-gobierno']);
+              break;
+            case 2:
+              this.router.navigate(['/dashboard-paciente']);
+              break;
+            case 3:
+              this.router.navigate(['/dashboard-doctor']);
+              break;
+            case 4:
+              this.router.navigate(['/dashboard-administrador']);
+              break;
+            default:
+              alert('Rol no reconocido');
+              console.error('Estructura de roles inválida:', res.user?.roles);
+              break;
+          }
+        },
+        error: (err: any) => {
+          console.error('Error en login:', err);
+          alert('Usuario o contraseña incorrectos');
         }
-      },
-      error: (err) => {
-        console.error('Error en login:', err);
-        alert('Usuario o contraseña incorrectos');
-      }
-    });
-  } else {
-    alert('Por favor completa todos los campos');
+      });
+    } else {
+      alert('Por favor completa todos los campos');
+    }
   }
-}
-
-
 }
