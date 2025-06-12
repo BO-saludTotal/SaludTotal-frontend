@@ -60,3 +60,4 @@ onSubmit(): void {
     alert('Por favor completa todos los campos');
   }
 }
+}
