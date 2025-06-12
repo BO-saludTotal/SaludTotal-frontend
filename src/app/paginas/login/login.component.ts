@@ -19,47 +19,44 @@ export class LoginComponent {
 
   constructor(private api: ApiService, private router: Router) {}
 
-  onSubmit(): void {
-    if (this.usuario.username && this.usuario.password) {
-      this.api.post('auth/login', this.usuario).subscribe({
-        next: (res: any) => {
-          console.log('Login exitoso:', res);
+onSubmit(): void {
+  if (this.usuario.username && this.usuario.password) {
+    this.api.post('auth/login', this.usuario).subscribe({
+      next: (res: any) => {
+        console.log('Login exitoso:', res);
 
-          // Guardar el token
-          localStorage.setItem('token', res.accessToken);
+        // Guardar el token
+        localStorage.setItem('token', res.accessToken);
 
-          // Detectar el roleId correctamente desde distintas estructuras posibles
-          const roleId = res.user?.roles?.[0]?.id ?? res.roleId ?? res.user?.roleId ?? res.data?.roleId;
+        // Detectar rol
+        const rol = res.rol ?? res.user?.rol ?? res.user?.roles?.[0]?.name;
 
-          console.log('Detectado roleId:', roleId);
-
-          // Redireccionar según el roleId
-          switch (roleId) {
-            case 1:
-              this.router.navigate(['/dashboard-gobierno']);
-              break;
-            case 2:
-              this.router.navigate(['/dashboard-paciente']);
-              break;
-            case 3:
-              this.router.navigate(['/dashboard-doctor']);
-              break;
-            case 4:
-              this.router.navigate(['/dashboard-administrador']);
-              break;
-            default:
-              alert('Rol no reconocido');
-              console.error('Estructura de roles inválida:', res.user?.roles);
-              break;
-          }
-        },
-        error: (err: any) => {
-          console.error('Error en login:', err);
-          alert('Usuario o contraseña incorrectos');
+        console.log('Rol recibido:', rol);
+        switch (rol) {
+          case 'Gobierno':
+            this.router.navigate(['/dashboard-gobierno']);
+            break;
+          case 'Paciente':
+            this.router.navigate(['/dashboard-paciente']);
+            break;
+          case 'Doctor':
+            this.router.navigate(['/dashboard-doctor']);
+            break;
+          case 'Administrador':
+            this.router.navigate(['/dashboard-administrador']);
+            break;
+          default:
+            alert('Rol no reconocido: ' + rol);
+            console.error('Rol inesperado recibido:', rol);
+            break;
         }
-      });
-    } else {
-      alert('Por favor completa todos los campos');
-    }
+      },
+      error: (err: any) => {
+        console.error('Error en login:', err);
+        alert('Usuario o contraseña incorrectos');
+      }
+    });
+  } else {
+    alert('Por favor completa todos los campos');
   }
 }
