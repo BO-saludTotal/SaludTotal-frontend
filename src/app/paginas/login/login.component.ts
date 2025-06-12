@@ -3,6 +3,7 @@ import { RouterModule, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ApiService } from '../../services/api.service';
+import { NavigationExtras } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -32,6 +33,10 @@ onSubmit(): void {
         const rol = res.user?.roles?.[0];
 
         console.log('Rol recibido:', rol);
+        
+        // --- aquí creamos el state con el carnet ---
+        const extras: NavigationExtras = { state: { carnet: this.usuario.username } };
+
         switch (rol) {
           case 'Gobierno':
             this.router.navigate(['/dashboard-gobierno']);
