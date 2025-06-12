@@ -27,9 +27,13 @@ jobs:
         with:
           node-version: '20.17.0'
 
-      - name: Install dependencies
-        run: npm install
+      - name: Clean node_modules and package-lock.json
+        run: | 
+          rm -rf node_modules package-lock.json
 
+      - name: Install dependencies from mirror
+        run: npm install --registry=https://registry.npmmirror.com
+        
       - name: Build Angular
         run: npm run build
 
