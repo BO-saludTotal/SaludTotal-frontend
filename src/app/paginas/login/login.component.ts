@@ -10,7 +10,7 @@ import { NavigationExtras } from '@angular/router'; // nuevo cambio para enviar 
   standalone: true,
   imports: [RouterModule, CommonModule, FormsModule],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
   usuario = {
@@ -20,17 +20,17 @@ export class LoginComponent {
 
   constructor(private api: ApiService, private router: Router) {}
 
-  onSubmit() {
-    if (this.usuario.username && this.usuario.password) {
-      this.api.post('auth/login', this.usuario).subscribe({
-        next: (res: any) => {
-          console.log('Login exitoso:', res);
+onSubmit(): void {
+  if (this.usuario.username && this.usuario.password) {
+    this.api.post('auth/login', this.usuario).subscribe({
+      next: (res: any) => {
+        console.log('Login exitoso:', res);
 
-          // Guardar el token en el localStorage
-          localStorage.setItem('token', res.accessToken);
+        // Guardar el token
+        localStorage.setItem('token', res.accessToken);
 
-          // Detectar correctamente el rol desde diferentes estructuras posibles
-          const roleId = res.roleId ?? res.user?.roleId ?? res.data?.roleId;
+        // Detectar rol
+        const rol = res.user?.roles?.[0];
 
           console.log('Detectado roleId:', roleId); 
 
@@ -63,9 +63,14 @@ export class LoginComponent {
           console.error('Error en login:', err);
           alert('Usuario o contraseña incorrectos');
         }
-      });
-    } else {
-      alert('Por favor completa todos los campos');
-    }
+      },
+      error: (err: any) => {
+        console.error('Error en login:', err);
+        alert('Usuario o contraseña incorrectos');
+      }
+    });
+  } else {
+    alert('Por favor completa todos los campos');
   }
+}
 }
