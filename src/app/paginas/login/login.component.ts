@@ -39,16 +39,16 @@ onSubmit(): void {
 
         switch (rol) {
           case 'Gobierno':
-            this.router.navigate(['/dashboard-gobierno']);
+            this.router.navigate(['/dashboard-gobierno'], extras);
             break;
           case 'Paciente':
-            this.router.navigate(['/dashboard-paciente']);
+            this.router.navigate(['/dashboard-paciente'], extras);
             break;
           case 'Doctor':
-            this.router.navigate(['/dashboard-doctor']);
+            this.router.navigate(['/dashboard-doctor'], extras);
             break;
           case 'Administrador':
-            this.router.navigate(['/dashboard-administrador']);
+            this.router.navigate(['/dashboard-administrador'], extras);
             break;
           default:
             alert('Rol no reconocido: ' + rol);
