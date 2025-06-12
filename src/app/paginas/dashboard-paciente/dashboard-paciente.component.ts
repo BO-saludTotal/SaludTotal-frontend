@@ -3,15 +3,19 @@ import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard-paciente',
+  standalone: true,  
   imports: [RouterModule],
   templateUrl: './dashboard-paciente.component.html',
   styleUrl: './dashboard-paciente.component.css'
 })
 export class DashboardPacienteComponent implements OnInit {
-  username: string = 'Paciente';
+  // valores por defecto en caso de entrar “a mano” o recargar
+  carnet   = 'ci';
+  fullName = 'Paciente';
 
   ngOnInit() {
-    // history.state.username viene de NavigationExtras.state
-    this.username = history.state.username || this.username;
+    // Leer del history.state
+    this.carnet   = history.state.carnet   || this.carnet;
+    this.fullName = history.state.fullName || this.fullName;
   }
 }

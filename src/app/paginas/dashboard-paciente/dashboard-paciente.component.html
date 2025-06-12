@@ -13,13 +13,14 @@
   <section class="welcome">
     <div class="profile-img"></div>
     <div class="welcome-text">
-      <!--username dinámico -->
-      <h2>Bienvenido {{ username }}</h2>
+      <!-- usuario y carnet dinámicos -->
+      <h2>Bienvenido {{ fullName }}</h2>
+      <p>Carnet: {{ carnet }}</p>
     </div>
   </section>
 
   <section class="actions">
-    <button [routerLink]="['/paciente-historial-medico']"><i class='bx bxs-folder'></i> Historial Médico</button>
+    <button [routerLink]="['/paciente-historial-medico', carnet]">Historial Médico</button>
     <button><i class='bx bxs-calendar-plus'></i> Agendar Cita</button>
     <button><i class='bx bxs-calendar'></i> Citas Médicas</button>
     <button [routerLink]="['/actualizar-info-paciente']"><i class='bx bxs-edit'></i> Actualizar Información</button>
