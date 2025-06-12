@@ -8,10 +8,9 @@ import { RouterModule } from '@angular/router';
   styleUrl: './dashboard-paciente.component.css'
 })
 export class DashboardPacienteComponent implements OnInit {
-  username: string = 'Paciente';
+  carnet = 'Paciente';
 
   ngOnInit() {
-    // history.state.username viene de NavigationExtras.state
-    this.username = history.state.username || this.username;
+    this.carnet = history.state.carnet || this.carnet;
   }
 }
