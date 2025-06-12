@@ -1,9 +1,4 @@
-
 <header class="header">
-  <!--<div class="logo">
-    <i class='bx bx-building-house'></i>
-    <span>Salud Total Bolivia</span>
-  </div>-->
   <div class="logo">
     <img src="assets/images/logos/logo-uno.png" alt="Logo de prueba funcional">
     Salud Total Bolivia
@@ -18,13 +13,14 @@
   <section class="welcome">
     <div class="profile-img"></div>
     <div class="welcome-text">
-      <h2>Bienvenido Willy</h2>
-      <p>ID: #12345678</p>
+      <!-- usuario y carnet dinámicos -->
+      <h2>Bienvenido {{ fullName }}</h2>
+      <p>Carnet: {{ carnet }}</p>
     </div>
   </section>
 
   <section class="actions">
-    <button [routerLink]="['/paciente-historial-medico']"><i class='bx bxs-folder'></i> Historial Médico</button>
+    <button [routerLink]="['/paciente-historial-medico', carnet]">Historial Médico</button>
     <button><i class='bx bxs-calendar-plus'></i> Agendar Cita</button>
     <button><i class='bx bxs-calendar'></i> Citas Médicas</button>
     <button [routerLink]="['/actualizar-info-paciente']"><i class='bx bxs-edit'></i> Actualizar Información</button>
