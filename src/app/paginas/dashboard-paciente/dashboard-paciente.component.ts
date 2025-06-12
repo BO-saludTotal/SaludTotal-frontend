@@ -3,6 +3,7 @@ import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard-paciente',
+  standalone: true,  
   imports: [RouterModule],
   templateUrl: './dashboard-paciente.component.html',
   styleUrl: './dashboard-paciente.component.css'
