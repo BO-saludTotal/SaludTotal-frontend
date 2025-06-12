@@ -6,16 +6,23 @@ import { Component } from '@angular/core';
   styleUrls: ['./pacientes-citas-medicas.component.css']
 })
 export class PacientesCitasMedicasComponent {
-  // Lógica para manejar las acciones de citas
+  volverAlInicio() {
+    // Lógica para volver al inicio
+  }
+
+  cerrarSesion() {
+    // Lógica para cerrar sesión
+  }
+
   confirmarAsistencia() {
-    // Implementar lógica de confirmación
+    // Lógica para confirmar asistencia
   }
 
   cancelarCita() {
-    // Implementar lógica de cancelación
+    // Lógica para cancelar cita
   }
 
   reprogramarCita() {
-    // Implementar lógica de reprogramación
+    // Lógica para reprogramar cita
   }
 }
