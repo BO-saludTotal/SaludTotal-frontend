@@ -8,9 +8,13 @@ import { RouterModule } from '@angular/router';
   styleUrl: './dashboard-paciente.component.css'
 })
 export class DashboardPacienteComponent implements OnInit {
-  carnet = 'Paciente';
+  // valores por defecto en caso de entrar “a mano” o recargar
+  carnet   = 'ci';
+  fullName = 'Paciente';
 
   ngOnInit() {
-    this.carnet = history.state.carnet || this.carnet;
+    // Leer del history.state
+    this.carnet   = history.state.carnet   || this.carnet;
+    this.fullName = history.state.fullName || this.fullName;
   }
 }
