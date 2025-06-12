@@ -24,10 +24,17 @@ export class LoginComponent {
       this.api.post('auth/login', this.usuario).subscribe({
         next: (res: any) => {
           console.log('Login exitoso:', res);
+
+          // Guardar el token en el localStorage
           localStorage.setItem('token', res.accessToken);
 
-          // Derivar según roleId
-          switch (res.roleId) {
+          // Detectar correctamente el rol desde diferentes estructuras posibles
+          const roleId = res.roleId ?? res.user?.roleId ?? res.data?.roleId;
+
+          console.log('Detectado roleId:', roleId);
+
+          // Redirección según el rol
+          switch (roleId) {
             case 1:
               this.router.navigate(['/dashboard-gobierno']);
               break;
@@ -42,6 +49,7 @@ export class LoginComponent {
               break;
             default:
               alert('Rol no reconocido');
+              console.error('No se pudo detectar un roleId válido:', res);
               break;
           }
         },

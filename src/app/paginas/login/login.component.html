@@ -8,7 +8,7 @@
   <p class="subtext">Por favor ingrese sus credenciales</p>
 
   <form #loginForm="ngForm" (ngSubmit)="onSubmit()">
-    <label for="username">Nombre de usuario</label>
+    <label for="username">Carnet de identidad</label>
     <div class="input-box">
       <i class='bx bxs-id-card'></i>
       <input
@@ -16,7 +16,7 @@
         id="username"
         name="username"
         [(ngModel)]="usuario.username"
-        placeholder="Ingresa tu nombre de usuario"
+        placeholder="Ingresa tu carnet de identidad"
         required
       >
     </div>
