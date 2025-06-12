@@ -1,16 +1,38 @@
-/* Estilos base */
+/* BASE */
 .citas-container {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  max-width: 800px;
+  max-width: 1500px;
   margin: 0 auto;
   padding: 20px;
   color: #333;
 }
 
+/* BARRA SUPERIOR */
+.barra-superior {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
 
+.btn-superior {
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-superior:hover {
+  opacity: 0.9;
+}
+
+/* ALERTAS */
 .alerta-cita, .alerta-perdida, .actualizacion-institucion {
-  background-color: #111827; /* Fondo negro */
-  color: #e5e7eb; /* Texto gris claro */
+  background-color: #111827;
+  color: #e5e7eb;
   padding: 15px;
   border-radius: 6px;
   margin-bottom: 15px;
@@ -25,8 +47,7 @@
 }
 
 .alerta-contenido h3 {
-  margin-top: 0;
-  margin-bottom: 5px;
+  margin: 0 0 5px 0;
   font-size: 1em;
 }
 
@@ -35,27 +56,20 @@
   color: #9ca3af;
 }
 
+/* FILTROS */
 .filtros-citas {
   margin-bottom: 20px;
 }
 
-.filtros-citas h3 {
-  margin-bottom: 10px;
-}
-
-.filtros-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.filtros-table th, .filtros-table td {
-  padding: 8px;
-  text-align: left;
-  border-bottom: 1px solid #e5e7eb;
+.filtros-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
 }
 
 .filtro-input, .filtro-select {
-  width: 100%;
+  flex: 1 1 150px;
   padding: 8px;
   border: 1px solid #d1d5db;
   border-radius: 4px;
@@ -68,39 +82,48 @@
   border: none;
   padding: 8px 15px;
   border-radius: 4px;
-  margin-top: 5px;
   cursor: pointer;
 }
 
+/* TABS */
+.tabs-citas {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #e5e7eb;
+  flex-wrap: wrap;
+}
 
+.tab-btn {
+  background: none;
+  border: none;
+  font-weight: bold;
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  color: #6b7280;
+}
+
+.tab-btn.activo {
+  border-color: #111827;
+  color: #111827;
+}
+
+/* LISTA DE CITAS */
 .lista-citas {
   margin-top: 20px;
 }
 
-.citas-header {
+.cita-item {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  margin-bottom: 15px;
-}
-
-.btn-citas-anteriores {
-  background: none;
-  border: none;
-  color: #111827;
-  cursor: pointer;
-  text-decoration: underline;
-}
-
-.cita-item {
+  flex-wrap: wrap;
+  gap: 15px;
   border: 1px solid #e5e7eb;
   border-radius: 8px;
   padding: 15px;
   margin-bottom: 15px;
-}
-
-.cita-fecha {
-  margin-bottom: 10px;
+  position: relative;
 }
 
 .cita-fecha strong {
@@ -109,10 +132,6 @@
 
 .cita-info h4 {
   margin: 5px 0;
-}
-
-.cita-medico {
-  margin: 10px 0;
 }
 
 .cita-medico strong {
@@ -133,12 +152,6 @@
   cursor: pointer;
 }
 
-.accion-btn.estado {
-  background-color: #f3f4f6;
-  color: #6b7280;
-  cursor: default;
-}
-
 .accion-btn.confirmar {
   background-color: #111827;
   color: white;
@@ -152,4 +165,48 @@
 .accion-btn.reprogramar {
   background-color: #111827;
   color: white;
+}
+
+/* ETIQUETAS DE ESTADO */
+.estado-cita {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.estado-cita.confirmada {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.estado-cita.pendiente {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  .barra-superior {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .tabs-citas {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cita-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .estado-cita {
+    position: static;
+    margin-top: 10px;
+  }
 }
