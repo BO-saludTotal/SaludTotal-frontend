@@ -1,1 +1,103 @@
-<p>pacientes-citas-medicas works!</p>
+<div class="citas-container">
+  <!-- Alerta de cita próxima -->
+  <div class="alerta-cita">
+    <h2># Tienes una cita en menos de 24 horas:</h2>
+    <p>19 mayo 2025, 09:00 - Instituto Nacional de Salud, La Paz</p>
+  </div>
+
+  <!-- Alerta de cita perdida -->
+  <div class="alerta-perdida">
+    <h2>## Has perdido una cita el 15 mayo 2025.</h2>
+    <p>Tu cuenta tiene restricciones hasta el 22 mayo 2025.</p>
+  </div>
+
+  <!-- Actualización de institución -->
+  <div class="actualizacion-institucion">
+    <h3>### Actualización de Institución:</h3>
+    <p>El Dr. García no estará disponible el 21 mayo 2025. Tu cita ha sido reprogramada.</p>
+  </div>
+
+  <hr>
+
+  <!-- Filtros -->
+  <div class="filtros-citas">
+    <h3>**Rango de fechas**</h3>
+    <div class="filtros-row">
+      <div class="filtro-item">
+        <label>Desde</label>
+        <input type="date">
+      </div>
+      <div class="filtro-item">
+        <label>Hasta</label>
+        <input type="date">
+      </div>
+      <div class="filtro-item">
+        <label>Especialidad</label>
+        <select>
+          <option>Todas</option>
+        </select>
+      </div>
+      <div class="filtro-item">
+        <label>Institución / Doctor</label>
+        <input type="text" placeholder="Buscar por nombre">
+      </div>
+    </div>
+  </div>
+
+  <!-- Listado de citas -->
+  <div class="lista-citas">
+    <div class="citas-header">
+      <h3>### Próximas citas</h3>
+      <button>Citas anteriores</button>
+    </div>
+
+    <!-- Cita 1 -->
+    <div class="cita-item">
+      <div class="cita-info">
+        <div class="cita-fecha">
+          <strong>19 mayo 2025</strong>
+          <span>Instituto Nacional de Salud</span>
+        </div>
+        <div class="cita-hora">
+          <strong>09:00</strong>
+          <span>La Paz, Av. Central #123</span>
+        </div>
+      </div>
+      <div class="cita-detalle">
+        <p><strong>Dr. Luis García</strong> Cardiología</p>
+      </div>
+      <div class="cita-acciones">
+        <h4>**Confirmar asistencia**</h4>
+        <div class="botones-accion">
+          <button class="btn-confirmar">Confirmado</button>
+          <button class="btn-conceder">Conceder</button>
+          <button class="btn-reprogramar">Reprogramar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cita 2 -->
+    <div class="cita-item">
+      <div class="cita-info">
+        <div class="cita-fecha">
+          <strong>21 mayo 2025</strong>
+          <span>Clínica Central</span>
+        </div>
+        <div class="cita-hora">
+          <span>Cochabamba, Av. Libertad #45</span>
+        </div>
+      </div>
+      <div class="cita-detalle">
+        <p><strong>Dra. Mariana Pérez</strong> Dermatología</p>
+      </div>
+      <div class="cita-acciones">
+        <h4>**Confirmar asistencia**</h4>
+        <div class="botones-accion">
+          <button class="btn-confirmar">Confirmado</button>
+          <button class="btn-conceder">Conceder</button>
+          <button class="btn-reprogramar">Reprogramar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

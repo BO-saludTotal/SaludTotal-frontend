@@ -11,6 +11,7 @@ import { AutentificacionPacienteComponent } from './paginas/autentificacion-paci
 import { CambiarContraPacienteComponent } from './paginas/cambiar-contra-paciente/cambiar-contra-paciente.component';
 import { PacienteHistorialMedicoComponent } from './paginas/paciente-historial-medico/paciente-historial-medico.component';
 import { SubirDocPacienteComponent } from './paginas/subir-doc-paciente/subir-doc-paciente.component';
+import { PacienteCitasMedicasComponent } from './paginas/paciente-citas-medicas/paciente-citas-medicas.component';
 
 export const routes: Routes = [
     {path: 'home', component: HomeComponent},
@@ -26,4 +27,5 @@ export const routes: Routes = [
     {path: 'cambiar-contra-paciente', component: CambiarContraPacienteComponent},
     {path: '', redirectTo: '/home', pathMatch: 'full'},
     {path: '**', component: PaginaNoEncontradaComponent},
+    { path: 'citas-medicas', component: PacienteCitasMedicasComponent }
 ];

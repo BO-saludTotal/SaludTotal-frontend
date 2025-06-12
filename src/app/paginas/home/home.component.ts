@@ -16,6 +16,10 @@ export class HomeComponent {
     e.preventDefault();
     document.getElementById('servicios')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
+  irAContacto(e: Event) {
+    e.preventDefault();
+    document.getElementById('contacto')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
   irAInicio(e: Event) {
     e.preventDefault();
     document.getElementById('inicio')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
