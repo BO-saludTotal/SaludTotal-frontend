@@ -31,11 +31,19 @@ onSubmit(): void {
 
         // Detectar rol
         const rol = res.user?.roles?.[0];
+        // extraemos Usuario y ci
+        const fullName = res.user?.fullName;      
+        const carnet   = res.user?.username; 
 
         console.log('Rol recibido:', rol);
         
         // --- aquí creamos el state con el carnet ---
-        const extras: NavigationExtras = { state: { carnet: this.usuario.username } };
+        const extras: NavigationExtras = {
+          state: {
+            carnet,
+            fullName
+          }
+        };
 
         switch (rol) {
           case 'Gobierno':
