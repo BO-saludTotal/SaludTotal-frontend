@@ -12,7 +12,7 @@
   </div>
 
   <!-- Actualización de institución -->
-  <div class="actualizacion-institucion">
+  <div cla  ss="actualizacion-institucion">
     <h3>### Actualización de Institución:</h3>
     <p>El Dr. García no estará disponible el 21 mayo 2025. Tu cita ha sido reprogramada.</p>
   </div>
@@ -22,81 +22,80 @@
   <!-- Filtros -->
   <div class="filtros-citas">
     <h3>**Rango de fechas**</h3>
-    <div class="filtros-row">
-      <div class="filtro-item">
-        <label>Desde</label>
-        <input type="date">
-      </div>
-      <div class="filtro-item">
-        <label>Hasta</label>
-        <input type="date">
-      </div>
-      <div class="filtro-item">
-        <label>Especialidad</label>
-        <select>
-          <option>Todas</option>
-        </select>
-      </div>
-      <div class="filtro-item">
-        <label>Institución / Doctor</label>
-        <input type="text" placeholder="Buscar por nombre">
-      </div>
-    </div>
+    <table class="filtros-table">
+      <thead>
+        <tr>
+          <th>Desde</th>
+          <th>Hasta</th>
+          <th>Especialidad</th>
+          <th>Institución / Doctor</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><input type="date" class="filtro-input"></td>  
+          <td><input type="date" class="filtro-input"></td>
+          <td>
+            <select class="filtro-select">
+              <option>Todas</option>
+            </select>
+          </td>   
+          <td><input type="text" placeholder="Buscar por nombre" class="filtro-input"></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 
   <!-- Listado de citas -->
   <div class="lista-citas">
     <div class="citas-header">
       <h3>### Próximas citas</h3>
-      <button>Citas anteriores</button>
+      <button class="btn-citas-anteriores">Citas anteriores</button>
     </div>
 
     <!-- Cita 1 -->
     <div class="cita-item">
-      <div class="cita-info">
-        <div class="cita-fecha">
-          <strong>19 mayo 2025</strong>
-          <span>Instituto Nacional de Salud</span>
-        </div>
-        <div class="cita-hora">
-          <strong>09:00</strong>
-          <span>La Paz, Av. Central #123</span>
-        </div>
+      <div class="cita-fecha-hora">
+        <div class="fecha">19 mayo 2025</div>
+        <div class="hora">09:00</div>
       </div>
+      
+      <div class="cita-info">
+        <h4>Instituto Nacional de Salud</h4>
+        <p>La Paz, Av. Central #123</p>
+      </div>
+      
       <div class="cita-detalle">
         <p><strong>Dr. Luis García</strong> Cardiología</p>
       </div>
+      
       <div class="cita-acciones">
-        <h4>**Confirmar asistencia**</h4>
-        <div class="botones-accion">
-          <button class="btn-confirmar">Confirmado</button>
-          <button class="btn-conceder">Conceder</button>
-          <button class="btn-reprogramar">Reprogramar</button>
-        </div>
+        <div class="accion-btn confirmar">Confirmar asistencia</div>
+        <div class="accion-btn cancelar">Cancelar</div>
+        <div class="accion-btn reprogramar">Reprogramar</div>
       </div>
     </div>
 
     <!-- Cita 2 -->
     <div class="cita-item">
-      <div class="cita-info">
-        <div class="cita-fecha">
-          <strong>21 mayo 2025</strong>
-          <span>Clínica Central</span>
-        </div>
-        <div class="cita-hora">
-          <span>Cochabamba, Av. Libertad #45</span>
-        </div>
+      <div class="cita-fecha-hora">
+        <div class="fecha">21 mayo 2025</div>
+        <div class="hora">14:00</div>
       </div>
+      
+      <div class="cita-info">
+        <h4>Clínica Central</h4>
+        <p>Cochabamba, Av. Libertad #45</p>
+      </div>
+      
       <div class="cita-detalle">
         <p><strong>Dra. Mariana Pérez</strong> Dermatología</p>
       </div>
+      
       <div class="cita-acciones">
-        <h4>**Confirmar asistencia**</h4>
-        <div class="botones-accion">
-          <button class="btn-confirmar">Confirmado</button>
-          <button class="btn-conceder">Conceder</button>
-          <button class="btn-reprogramar">Reprogramar</button>
-        </div>
+        <div class="accion-btn confirmar">Confirmar asistencia</div>
+        <div class="accion-btn cancelar">Cancelar</div>
+        <div class="accion-btn reprogramar">Reprogramar</div>
       </div>
     </div>
   </div>

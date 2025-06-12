@@ -2,10 +2,20 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-pacientes-citas-medicas',
-  imports: [],
   templateUrl: './pacientes-citas-medicas.component.html',
-  styleUrl: './pacientes-citas-medicas.component.css'
+  styleUrls: ['./pacientes-citas-medicas.component.css']
 })
 export class PacientesCitasMedicasComponent {
+  // Lógica para manejar las acciones de citas
+  confirmarAsistencia() {
+    // Implementar lógica de confirmación
+  }
 
+  cancelarCita() {
+    // Implementar lógica de cancelación
+  }
+
+  reprogramarCita() {
+    // Implementar lógica de reprogramación
+  }
 }
