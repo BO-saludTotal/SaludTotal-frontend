@@ -19,47 +19,44 @@ export class LoginComponent {
 
   constructor(private api: ApiService, private router: Router) {}
 
-  onSubmit() {
-    if (this.usuario.username && this.usuario.password) {
-      this.api.post('auth/login', this.usuario).subscribe({
-        next: (res: any) => {
-          console.log('Login exitoso:', res);
+ onSubmit() {
+  if (this.usuario.username && this.usuario.password) {
+    this.api.post('auth/login', this.usuario).subscribe({
+      next: (res: any) => {
+        console.log('Login exitoso:', res);
 
-          // Guardar el token en el localStorage
-          localStorage.setItem('token', res.accessToken);
+        localStorage.setItem('token', res.accessToken);
 
-          // Detectar correctamente el rol desde diferentes estructuras posibles
-          const roleId = res.roleId ?? res.user?.roleId ?? res.data?.roleId;
+        const roleId = res.user?.roles?.[0]?.id;
+        console.log('Detectado roleId:', roleId);
 
-          console.log('Detectado roleId:', roleId);
-
-          // Redirección según el rol
-          switch (roleId) {
-            case 1:
-              this.router.navigate(['/dashboard-gobierno']);
-              break;
-            case 2:
-              this.router.navigate(['/dashboard-paciente']);
-              break;
-            case 3:
-              this.router.navigate(['/dashboard-doctor']);
-              break;
-            case 4:
-              this.router.navigate(['/dashboard-administrador']);
-              break;
-            default:
-              alert('Rol no reconocido');
-              console.error('No se pudo detectar un roleId válido:', res);
-              break;
-          }
-        },
-        error: (err) => {
-          console.error('Error en login:', err);
-          alert('Usuario o contraseña incorrectos');
+        switch (roleId) {
+          case 1:
+            this.router.navigate(['/dashboard-gobierno']);
+            break;
+          case 2:
+            this.router.navigate(['/dashboard-paciente']);
+            break;
+          case 3:
+            this.router.navigate(['/dashboard-doctor']);
+            break;
+          case 4:
+            this.router.navigate(['/dashboard-administrador']);
+            break;
+          default:
+            alert('Rol no reconocido');
+            console.error('No se pudo detectar un roleId válido:', res);
+            break;
         }
-      });
-    } else {
-      alert('Por favor completa todos los campos');
-    }
+      },
+      error: (err) => {
+        console.error('Error en login:', err);
+        alert('Usuario o contraseña incorrectos');
+      }
+    });
+  } else {
+    alert('Por favor completa todos los campos');
   }
+}
+
 }
