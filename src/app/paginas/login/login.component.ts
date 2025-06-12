@@ -29,7 +29,7 @@ onSubmit(): void {
         localStorage.setItem('token', res.accessToken);
 
         // Detectar rol
-        const rol = res.rol ?? res.user?.rol ?? res.user?.roles?.[0]?.name;
+        const rol = res.user?.roles?.[0];
 
         console.log('Rol recibido:', rol);
         switch (rol) {
