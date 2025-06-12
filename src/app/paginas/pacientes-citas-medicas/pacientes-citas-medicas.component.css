@@ -1,0 +1,139 @@
+.citas-container {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Alertas */
+.alerta-cita {
+  background-color: #FFF3E0;
+  padding: 15px;
+  border-left: 5px solid #FFA000;
+  margin-bottom: 20px;
+  border-radius: 4px;
+}
+
+.alerta-perdida {
+  background-color: #FFEBEE;
+  padding: 15px;
+  border-left: 5px solid #F44336;           
+  margin-bottom: 20px;
+  border-radius: 4px;
+}
+
+.actualizacion-institucion {
+  background-color: #E3F2FD;
+  padding: 15px;
+  border-left: 5px solid #2196F3;
+  margin-bottom: 20px;
+  border-radius: 4px;
+}
+
+/* Filtros */
+.filtros-citas {
+  margin-bottom: 30px;
+}
+
+.filtros-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.filtros-table th, .filtros-table td {
+  padding: 8px;
+  text-align: left;
+}
+
+.filtro-input, .filtro-select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+/* Listado de citas */
+.citas-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.btn-citas-anteriores {
+  background: none;
+  border: none;
+  color: #2196F3;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.cita-item {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #fff;
+}
+
+.cita-fecha-hora {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.fecha, .hora {
+  font-weight: bold;
+}
+
+.cita-info h4 {
+  margin: 5px 0;
+  color: #333;
+}
+
+.cita-detalle {
+  margin: 15px 0;
+}
+
+.cita-detalle strong {
+  color: #333;
+}
+
+.cita-acciones {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.accion-btn {
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  text-align: center;
+}
+
+.confirmar {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.cancelar {
+  background-color: #F44336;
+  color: white;
+}
+
+.reprogramar {
+  background-color: #2196F3;
+  color: white;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background-color: #e0e0e0;
+  margin: 20px 0;
+}
