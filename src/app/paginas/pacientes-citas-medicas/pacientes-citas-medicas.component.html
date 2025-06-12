@@ -1,5 +1,12 @@
 <div class="citas-container">
 
+  <!-- BOTONES SUPERIORES -->
+  <div class="barra-superior">
+    <button class="btn-superior volver">← Volver</button>
+    <button class="btn-superior cerrar-sesion">Cerrar sesión</button>
+  </div>
+
+  <!-- ALERTAS -->
   <div class="alerta-cita">
     <span class="alerta-icono">#</span>
     <div class="alerta-contenido">
@@ -24,90 +31,70 @@
     </div>
   </div>
 
-
+  <!-- FILTROS -->
   <div class="filtros-citas">
     <h3>Rango de fechas</h3>
-    <table class="filtros-table">
-      <thead>
-        <tr>
-          <th>Desde</th>
-          <th>Hasta</th>
-          <th>Especialidad</th>
-          <th>Institución / Doctor</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><input type="date" class="filtro-input"></td>
-          <td><input type="date" class="filtro-input"></td>
-          <td>
-            <select class="filtro-select">
-              <option>Todas</option>
-            </select>
-          </td>
-          <td>
-            <input type="text" placeholder="Buscar por nombre" class="filtro-input">
-            <button class="btn-buscar">Buscar</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="filtros-row">
+      <input type="date" class="filtro-input">
+      <input type="date" class="filtro-input">
+      <select class="filtro-select">
+        <option>Todas</option>
+      </select>
+      <input type="text" placeholder="Buscar por nombre" class="filtro-input">
+      <button class="btn-buscar">Buscar</button>
+    </div>
   </div>
 
+  <!-- TABS -->
+  <div class="tabs-citas">
+    <button class="tab-btn activo">Próximas citas</button>
+    <button class="tab-btn">Citas anteriores</button>
+  </div>
 
+  <!-- LISTA DE CITAS -->
   <div class="lista-citas">
-    <div class="citas-header">
-      <h3>Próximas citas</h3>
-      <button class="btn-citas-anteriores">Citas anteriores</button>
-    </div>
-
 
     <div class="cita-item">
       <div class="cita-fecha">
         <strong>19 mayo 2025</strong>
         <span>09:00</span>
       </div>
-      
       <div class="cita-info">
         <h4>Instituto Nacional de Salud</h4>
         <p>La Paz, Av. Central #123</p>
       </div>
-      
       <div class="cita-medico">
         <p><strong>Dr. Luis García</strong></p>
         <p>Cardiología</p>
       </div>
-      
       <div class="cita-acciones">
         <button class="accion-btn confirmar">Confirmar asistencia</button>
         <button class="accion-btn cancelar">Cancelar</button>
         <button class="accion-btn reprogramar">Reprogramar</button>
       </div>
+      <div class="estado-cita confirmada">Confirmado</div>
     </div>
-
 
     <div class="cita-item">
       <div class="cita-fecha">
         <strong>21 mayo 2025</strong>
         <span>14:00</span>
       </div>
-      
       <div class="cita-info">
         <h4>Clínica Central</h4>
         <p>Cochabamba, Av. Libertad #45</p>
       </div>
-      
       <div class="cita-medico">
         <p><strong>Dra. Mariana Pérez</strong></p>
         <p>Dermatología</p>
       </div>
-      
       <div class="cita-acciones">
         <button class="accion-btn confirmar">Confirmar asistencia</button>
         <button class="accion-btn cancelar">Cancelar</button>
-        <button class="accion-btn estado">Pendiente</button>
         <button class="accion-btn reprogramar">Reprogramar</button>
       </div>
+      <div class="estado-cita pendiente">Pendiente</div>
     </div>
+
   </div>
 </div>
